@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rio/static/css/main.073c9b0a.css",
+    "main.js": "/rio/static/js/main.92fd4354.js",
+    "static/js/787.4b04ada2.chunk.js": "/rio/static/js/787.4b04ada2.chunk.js",
+    "static/media/logo.svg": "/rio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/rio/index.html",
+    "main.073c9b0a.css.map": "/rio/static/css/main.073c9b0a.css.map",
+    "main.92fd4354.js.map": "/rio/static/js/main.92fd4354.js.map",
+    "787.4b04ada2.chunk.js.map": "/rio/static/js/787.4b04ada2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.92fd4354.js"
+  ]
+}
