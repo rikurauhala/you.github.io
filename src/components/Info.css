@@ -1,0 +1,35 @@
+.info {
+  text-align: center;
+}
+
+.picture {
+  border-radius: 50%;
+  height: 200px;
+  margin: 50px 0 20px 0;
+  width: 200px;
+}
+
+.title {
+  color: #8bb4f7;
+}
+
+.details {
+  color: lightgray;
+}
+
+.icon-info {
+  filter: invert();
+  height: 12px;
+  width: 12px;
+}
+
+.icon-social {
+  filter: invert();
+  height: 32px;
+  margin: 0 10px 0 10px;
+  width: 32px;
+}
+
+.link-social:hover {
+  text-decoration: none;
+}

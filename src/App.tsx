@@ -1,9 +1,11 @@
+import Info from './components/Info';
+
 import './App.css';
 
 const App = () => {
   return (
     <div>
-      Hello there!
+      <Info />
     </div>
   );
 };
