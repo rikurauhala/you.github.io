@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/rio/static/css/main.0cfc8f44.css",
-    "main.js": "/rio/static/js/main.ab162c2c.js",
-    "static/media/riku.jpg": "/rio/static/media/riku.32c24103c7cb7632ffe0.jpg",
-    "static/media/gh.svg": "/rio/static/media/gh.833b63e28cadf07403bc81451d30b858.svg",
-    "static/media/age.svg": "/rio/static/media/age.a4fedd25a5d4ab6b4639794a5fe09abe.svg",
-    "static/media/sex.svg": "/rio/static/media/sex.6569f11bbce4c5ceeef9f9cf3ea913e6.svg",
-    "static/media/li.svg": "/rio/static/media/li.f2f7d420f8ec14109e65abad03b5f32c.svg",
-    "index.html": "/rio/index.html",
-    "static/media/loc.svg": "/rio/static/media/loc.994928ef06a51d299a5aa0249b17719a.svg",
-    "main.0cfc8f44.css.map": "/rio/static/css/main.0cfc8f44.css.map",
-    "main.ab162c2c.js.map": "/rio/static/js/main.ab162c2c.js.map"
+    "main.css": "/static/css/main.0cfc8f44.css",
+    "main.js": "/static/js/main.9cac29da.js",
+    "static/media/riku.jpg": "/static/media/riku.32c24103c7cb7632ffe0.jpg",
+    "static/media/gh.svg": "/static/media/gh.833b63e28cadf07403bc81451d30b858.svg",
+    "static/media/age.svg": "/static/media/age.a4fedd25a5d4ab6b4639794a5fe09abe.svg",
+    "static/media/sex.svg": "/static/media/sex.6569f11bbce4c5ceeef9f9cf3ea913e6.svg",
+    "static/media/li.svg": "/static/media/li.f2f7d420f8ec14109e65abad03b5f32c.svg",
+    "index.html": "/index.html",
+    "static/media/loc.svg": "/static/media/loc.994928ef06a51d299a5aa0249b17719a.svg",
+    "main.0cfc8f44.css.map": "/static/css/main.0cfc8f44.css.map",
+    "main.9cac29da.js.map": "/static/js/main.9cac29da.js.map"
   },
   "entrypoints": [
     "static/css/main.0cfc8f44.css",
-    "static/js/main.ab162c2c.js"
+    "static/js/main.9cac29da.js"
   ]
 }
