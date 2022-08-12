@@ -11,13 +11,13 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-import { RepositoryFull } from './types/types';
+import { Repository, RepositoryFull } from './types/types';
 
 import './App.css';
 
 const App = (): JSX.Element => {
   const [repositories, setRepositories] = useState<Array<RepositoryFull>>([]);
-  const filteredRepositories = repositories.map(repository => ({
+  const filteredRepositories: Array<Repository> = repositories.map(repository => ({
     created_at: repository.created_at,
     description: repository.description,
     homepage: repository.homepage,
