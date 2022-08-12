@@ -8,14 +8,24 @@ import { Octokit } from 'octokit';
 
 import Info from './components/Info';
 import About from './components/About';
-//import ProjectsMUI from './components/ProjectsMUI';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
+
+import { RepositoryFull } from './types/types';
 
 import './App.css';
 
 const App = (): JSX.Element => {
-  const [repositories, setRepositories] = useState<Array<unknown>>([]);
+  const [repositories, setRepositories] = useState<Array<RepositoryFull>>([]);
+  const filteredRepositories = repositories.map(repository => ({
+    created_at: repository.created_at,
+    description: repository.description,
+    homepage: repository.homepage,
+    html_url: repository.html_url,
+    id: repository.id,
+    name: repository.name,
+    topics: repository.topics,
+  }));
 
   const octokit = new Octokit();
   const username = 'rikurauhala';
@@ -32,12 +42,11 @@ const App = (): JSX.Element => {
     void fetchRepositories();
   }, []);
 
-  console.log(repositories);
   return (
     <Container maxWidth='md'>
       <Info />
       <About />
-      <Projects />
+      <Projects repositories={filteredRepositories} />
       <Footer />
     </Container>
   );

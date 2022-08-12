@@ -63,3 +63,9 @@
   border: #3bc8c1 2px solid;
   color: #3bc8c1;
 }
+
+.test {
+  border:#0f3552 1px solid;
+  border-radius: 10px;
+  padding: 15px;
+}
