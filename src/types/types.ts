@@ -12,6 +12,7 @@ export interface Repository {
   html_url: string
   id: number
   name: string
+  pushed_at: Date
   topics: Array<string>
   year: string
 }
