@@ -20,13 +20,13 @@ const App = (): JSX.Element => {
   const filteredRepositories: Array<Repository> = repositories
     .filter(repository => !repository.fork && repository.topics.includes('portfolio'))
     .map(repository => ({
-      created_at: repository.created_at,
       description: repository.description,
       homepage: repository.homepage,
       html_url: repository.html_url,
       id: repository.id,
       name: repository.name,
       topics: repository.topics,
+      year: repository.created_at.substring(0,4)
     }));
 
   const octokit = new Octokit();

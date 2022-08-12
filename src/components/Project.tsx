@@ -10,12 +10,15 @@ const Project = ({ repository }: { repository: Repository }): JSX.Element => (
             {repository.name}
           </Typography>
         </Link>
-        <Typography variant="body2" color="textSecondary" component="p" style={{color: '#fff'}}>
+        <Typography component="p" style={{color: '#5d7275', marginBottom: '8px'}}>
+          {repository.year}
+        </Typography>
+        <Typography variant="body2" component="p" style={{color: '#fff'}}>
           {repository.description}
         </Typography>
       </CardContent>
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p" style={{color: '#465557'}}>
+        <Typography variant="body2" component="p" style={{color: '#465557'}}>
           {repository.topics
             .filter(topic => topic !== 'portfolio')
             .map(topic => 

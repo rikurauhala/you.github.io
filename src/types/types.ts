@@ -7,13 +7,13 @@ export interface License {
 }
 
 export interface Repository {
-  created_at: string
   description: string
   homepage: string
   html_url: string
   id: number
   name: string
   topics: Array<string>
+  year: string
 }
 
 export interface RepositoryFull {
