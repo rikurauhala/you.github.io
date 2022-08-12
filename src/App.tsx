@@ -2,11 +2,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from 'react';
 
+import { Container } from '@mui/material';
+
 import { Octokit } from 'octokit';
 
 import Info from './components/Info';
 import About from './components/About';
-import ProjectsGH from './components/ProjectsGH';
+//import ProjectsMUI from './components/ProjectsMUI';
+import Projects from './components/Projects';
 import Footer from './components/Footer';
 
 import './App.css';
@@ -31,12 +34,12 @@ const App = (): JSX.Element => {
 
   console.log(repositories);
   return (
-    <>
+    <Container maxWidth='md'>
       <Info />
       <About />
-      <ProjectsGH repositories={repositories} />
+      <Projects />
       <Footer />
-    </>
+    </Container>
   );
 };
 

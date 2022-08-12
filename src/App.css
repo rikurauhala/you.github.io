@@ -2,8 +2,6 @@ body {
   background-color: #05121c;
   color: #fff;
   font-family: Roboto;
-  margin: auto;
-  max-width: 95%;
 }
 
 a {
@@ -18,10 +16,4 @@ a:link, a:visited {
 a:hover {
   color: #8bb4f7;
   text-decoration: underline;
-}
-
-@media only screen and (min-width: 992px) {
-  body {
-    max-width: 50%;
-  }
 }
