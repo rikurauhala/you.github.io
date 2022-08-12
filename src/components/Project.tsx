@@ -4,7 +4,7 @@ import { Repository } from '../types/types';
 const Project = ({ repository }: { repository: Repository }): JSX.Element => (
   <Grid item xs={12} md={6} style={{display: 'flex'}}>
     <Card style={{backgroundColor: '#05121c', width: '100%', border: '#0f3552 1px solid'}}>
-      <CardContent className='project'>
+      <CardContent>
         <Link href={repository.html_url}>
           <Typography gutterBottom variant="h6" component="h2">
             {repository.name}
@@ -12,6 +12,15 @@ const Project = ({ repository }: { repository: Repository }): JSX.Element => (
         </Link>
         <Typography variant="body2" color="textSecondary" component="p" style={{color: '#fff'}}>
           {repository.description}
+        </Typography>
+      </CardContent>
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p" style={{color: '#465557'}}>
+          {repository.topics
+            .filter(topic => topic !== 'portfolio')
+            .map(topic => 
+              <span>#{topic}&nbsp;</span>
+            )}
         </Typography>
       </CardContent>
     </Card>
