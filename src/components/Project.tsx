@@ -1,5 +1,6 @@
 import { Card, CardContent, Grid, Link, Typography } from '@mui/material';
 import { Repository } from '../types/types';
+import LanguageBar from './LanguageBar';
 
 const Project = ({ repository }: { repository: Repository }): JSX.Element => (
   <Grid item xs={12} md={6} style={{display: 'flex'}}>
@@ -16,6 +17,7 @@ const Project = ({ repository }: { repository: Repository }): JSX.Element => (
         <Typography variant="body2" component="p" style={{color: '#fff'}}>
           {repository.description}
         </Typography>
+      <LanguageBar languagesUrl={repository.languages_url} />
       </CardContent>
       <CardContent>
         <Typography variant="body2" component="p" style={{color: '#465557'}}>

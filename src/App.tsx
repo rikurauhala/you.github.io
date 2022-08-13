@@ -26,6 +26,7 @@ const App = (): JSX.Element => {
       homepage: repository.homepage,
       html_url: repository.html_url,
       id: repository.id,
+      languages_url: repository.languages_url,
       name: repository.name,
       pushed_at: new Date(repository.pushed_at),
       topics: repository.topics,

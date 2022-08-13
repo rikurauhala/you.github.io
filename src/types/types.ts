@@ -11,6 +11,7 @@ export interface Repository {
   homepage: string
   html_url: string
   id: number
+  languages_url: string
   name: string
   pushed_at: Date
   topics: Array<string>
