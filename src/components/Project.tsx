@@ -24,7 +24,7 @@ const Project = ({ repository }: { repository: Repository }): JSX.Element => (
           {repository.topics
             .filter(topic => topic !== 'portfolio')
             .map(topic => 
-              <span key={topic}>#{topic}&nbsp;</span>
+              <span key={topic}>#{topic} </span>
             )}
         </Typography>
       </CardContent>
