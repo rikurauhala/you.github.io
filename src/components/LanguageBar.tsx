@@ -43,9 +43,8 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
         Object
           .entries(barLength)
           .map(([key, value]) =>
-            <Tooltip title={value[0]} arrow>
+            <Tooltip arrow enterTouchDelay={0} key={key} title={value[0]}>
               <div
-                key={key}
                 className='language'
                 style={{
                   backgroundColor: colors[value[0] as keyof typeof colors],
