@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from 'react';
 
+import { Tooltip } from '@mui/material';
+
 import { Octokit } from 'octokit';
 
 import { colors } from '../utils/colors';
@@ -40,15 +42,17 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
       {
         Object
           .entries(barLength)
-          .map(([key, value]) => 
-            <div
-              key={key}
-              className='language'
-              style={{
-                backgroundColor: colors[value[0] as keyof typeof colors],
-                width: value[1]
-              }}
-            />
+          .map(([key, value]) =>
+            <Tooltip title={value[0]} arrow>
+              <div
+                key={key}
+                className='language'
+                style={{
+                  backgroundColor: colors[value[0] as keyof typeof colors],
+                  width: value[1]
+                }}
+              />
+            </Tooltip>
           )
       }
     </div>

@@ -7,20 +7,20 @@ const Project = ({ repository }: { repository: Repository }): JSX.Element => (
     <Card style={{backgroundColor: '#05121c', width: '100%', border: '#0f3552 1px solid'}}>
       <CardContent>
         <Link href={repository.html_url}>
-          <Typography gutterBottom variant="h6" component="h2">
+          <Typography gutterBottom variant='h6' component='h2'>
             {repository.name}
           </Typography>
         </Link>
-        <Typography component="p" style={{color: '#5d7275', marginBottom: '8px'}}>
+        <Typography component='p' style={{color: '#5d7275', marginBottom: '8px'}}>
           {repository.year}
         </Typography>
-        <Typography variant="body2" component="p" style={{color: '#fff'}}>
+        <Typography variant='body2' component='p' style={{color: '#fff'}}>
           {repository.description}
         </Typography>
       <LanguageBar languagesUrl={repository.languages_url} />
       </CardContent>
       <CardContent>
-        <Typography variant="body2" component="p" style={{color: '#465557'}}>
+        <Typography variant='body2' component='p' style={{color: '#465557'}}>
           {repository.topics
             .filter(topic => topic !== 'portfolio')
             .map(topic => 
