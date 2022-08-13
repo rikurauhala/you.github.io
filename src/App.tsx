@@ -11,7 +11,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-import { username } from './config';
+import { keyword, username } from './config';
 
 import { Repository, RepositoryFull } from './types/types';
 
@@ -20,7 +20,7 @@ import './App.css';
 const App = (): JSX.Element => {
   const [repositories, setRepositories] = useState<Array<RepositoryFull>>([]);
   const filteredRepositories: Array<Repository> = repositories
-    .filter(repository => !repository.fork && repository.topics.includes('portfolio'))
+    .filter(repository => !repository.fork && repository.topics.includes(keyword))
     .map(repository => ({
       description: repository.description,
       homepage: repository.homepage,
