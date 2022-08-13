@@ -44,7 +44,10 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
             <div
               key={key}
               className='language'
-              style={{backgroundColor: colors[value[0]], width: value[1]}}
+              style={{
+                backgroundColor: colors[value[0] as keyof typeof colors],
+                width: value[1]
+              }}
             />
           )
       }
