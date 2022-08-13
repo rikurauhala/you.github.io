@@ -1,3 +1,8 @@
+hr {
+  border: #0f3552 1px solid;
+  margin-bottom: 20px;
+}
+
 .footer {
   clear: left;
   color: #8bb4f7;
