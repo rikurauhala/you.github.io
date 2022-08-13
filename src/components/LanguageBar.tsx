@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from 'react';
 
 import { Tooltip } from '@mui/material';
@@ -17,7 +15,9 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
     const fetchLanguages = async () => {
       try {
         const octokit = new Octokit();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const { data } = await octokit.request(`GET ${languagesUrl}`);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setLanguages(data);
       } catch (error) {
         console.log(error);

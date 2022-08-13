@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from 'react';
 
 import { Container } from '@mui/material';
@@ -38,7 +36,9 @@ const App = (): JSX.Element => {
     const fetchRepositories = async () => {
       try {
         const octokit = new Octokit();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const { data } = await octokit.request(`GET /users/${username}/repos`);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         setRepositories(data);
       } catch (error) {
         console.log(error);
