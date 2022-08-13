@@ -11,6 +11,8 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
+import { username } from './config';
+
 import { Repository, RepositoryFull } from './types/types';
 
 import './App.css';
@@ -30,15 +32,11 @@ const App = (): JSX.Element => {
       year: repository.created_at.substring(0,4)
     }))
     .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime());
-  
-  console.log(filteredRepositories);
-
-  const octokit = new Octokit();
-  const username = 'rikurauhala';
 
   useEffect(() => {
     const fetchRepositories = async () => {
       try {
+        const octokit = new Octokit();
         const { data } = await octokit.request(`GET /users/${username}/repos`);
         setRepositories(data);
       } catch (error) {
