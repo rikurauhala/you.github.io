@@ -1,9 +1,17 @@
+import { useEffect, useState } from 'react';
+
+import { Octokit } from 'octokit';
+
 import { Link, Typography } from '@mui/material';
+
+import { username } from '../config';
+
+import { UserFull } from '../types/types';
+
+import { initialUserFull } from '../utils/initialObjects';
 
 import profilePicture from '../assets/images/riku.jpg';
 
-import ageIcon from '../assets/icons/details/age.svg';
-import sexIcon from '../assets/icons/details/sex.svg';
 import locIcon from '../assets/icons/details/loc.svg';
 
 import ghIcon from '../assets/icons/social/gh.svg';
@@ -20,29 +28,32 @@ const ProfilePicture = (): JSX.Element => (
   />
 );
 
-const Name = (): JSX.Element => (
-  <Typography variant='h4' component='h1'>
-    Riku Rauhala
-  </Typography>
-);
+const Name = ({ name }: { name: string }): JSX.Element => {
+  if (name === 'initial') {
+    return (
+      <div>Skeleton here</div>
+    );
+  }
 
-const Title = (): JSX.Element => (
-  <p className='title'>
-    <Typography variant='subtitle1' component='h2'>
-      Computer science student at&nbsp;
-      <Link href='https://www.helsinki.fi/' target='_blank'>
-        University of Helsinki
-      </Link>
+  return (
+    <Typography variant='h4' component='h1'>
+      {name}
     </Typography>
-  </p>
+  );
+};
+
+const Bio = ({ bio }: { bio: string }): JSX.Element => (
+  <div className='bio'>
+    <Typography variant='subtitle1' component='h2'>
+      {bio}
+    </Typography>
+  </div>
 );
 
-const Details = (): JSX.Element => (
-  <p className='details'>
-    <img src={ageIcon as string} className='icon-info' title='Age' /> 26 |&nbsp;
-    <img src={sexIcon as string} className='icon-info' title='Sex' /> M |&nbsp;
-    <img src={locIcon as string} className='icon-info' title='Location' /> Finland
-  </p>
+const Location = ({ location }: { location: string }): JSX.Element => (
+  <div className='details'>
+    <img src={locIcon as string} className='icon-info' title='Location' /> {location}
+  </div>
 );
 
 const Socials = (): JSX.Element => (
@@ -70,14 +81,34 @@ const Social = ({ url, icon, title }: { url: string, icon: string, title: string
   </Link>
 );
 
-const Info = (): JSX.Element => (
-  <div className='info'>
-    <ProfilePicture />
-    <Name />
-    <Title />
-    <Details />
-    <Socials />
-  </div>
-);
+const Info = (): JSX.Element => {
+  const [user, setUser] = useState<UserFull>(initialUserFull);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const octokit = new Octokit();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const { data } = await octokit.request(`GET /users/${username}`);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        setUser(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    void fetchUser();
+    //setTimeout(fetchUser, 5000);
+  }, []);
+
+  return (
+    <div className='info'>
+      <ProfilePicture />
+      <Name name={user.name} />
+      <Bio bio={user.bio} />
+      <Location location={user.location} />
+      <Socials />
+    </div>
+  );
+};
 
 export default Info;

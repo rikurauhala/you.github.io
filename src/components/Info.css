@@ -5,16 +5,18 @@
 .picture {
   border-radius: 50%;
   height: 200px;
-  margin: 50px 0 20px 0;
+  margin: 2rem 0;
   width: 200px;
 }
 
-.title {
+.bio {
   color: #8bb4f7;
+  margin: 1rem 0;
 }
 
 .details {
   color: lightgray;
+  margin: 1rem 0;
 }
 
 .icon-info {
