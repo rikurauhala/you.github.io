@@ -1,5 +1,7 @@
 export const colors = {
+  'C#': '#178600',
   'CSS': '#563d7c',
+  'EJS': '#a91e50',
   'Dockerfile': '#384d54',
   'HTML': '#e34c26',
   'Java': '#b07219',
