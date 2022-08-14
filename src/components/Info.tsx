@@ -10,8 +10,6 @@ import { UserFull } from '../types/types';
 
 import { initialUserFull } from '../utils/initialObjects';
 
-import profilePicture from '../assets/images/riku.jpg';
-
 import locIcon from '../assets/icons/details/loc.svg';
 
 import ghIcon from '../assets/icons/social/gh.svg';
@@ -19,11 +17,11 @@ import liIcon from '../assets/icons/social/li.svg';
 
 import './Info.css';
 
-const ProfilePicture = (): JSX.Element => (
+const ProfilePicture = ({ url }: { url: string }): JSX.Element => (
   <img
     alt='Profile picture'
     className='picture'
-    src={profilePicture as string}
+    src={url}
     title='This is me!'
   />
 );
@@ -102,7 +100,7 @@ const Info = (): JSX.Element => {
 
   return (
     <div className='info'>
-      <ProfilePicture />
+      <ProfilePicture url={user.avatar_url} />
       <Name name={user.name} />
       <Bio bio={user.bio} />
       <Location location={user.location} />
