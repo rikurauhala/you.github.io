@@ -1,27 +1,23 @@
-import { Grid } from '@mui/material';
-import Project from './Project'; 
 import { Repository } from '../types/types';
 
+import Subtitle from './Subtitle';
+import Paragraph from './Paragraph';
+import ProjectGrid from './ProjectGrid';
+
 const Projects = ({ repositories }: { repositories: Array<Repository> }): JSX.Element => {
+  const subtitle = 'Projects';
+  const content = `
+    Here is a selection of projects I have worked on.
+    Click the name of the project to view the source code and documentation on GitHub.
+    Hover over or tap the colored bar to see which languages the code base consists of.
+    The last section lists relevant topics.
+  `;
+
   return (
     <>
-      <h2>Projects</h2>
-      <p>
-        Here is a selection of projects I have worked on.
-        Click the name of the project to view the source code and documentation on GitHub.
-        <br/><br/>
-        More projects will be added when they are ready to be published.
-      </p>
-      <div>
-        <Grid container spacing={2}>
-          {repositories.map(repository =>
-            <Project
-              key={repository.id}
-              repository={repository}
-            />
-          )}
-        </Grid>
-      </div>
+      <Subtitle subtitle={subtitle} />
+      <Paragraph content={content} />
+      <ProjectGrid repositories={repositories} />
     </>
   );
 };
