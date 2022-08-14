@@ -13,14 +13,22 @@ import { initialUserFull } from '../utils/initialObjects';
 
 import './Info.css';
 
-const ProfilePicture = ({ url }: { url: string }): JSX.Element => (
-  <img
-    alt='Profile picture'
-    className='picture'
-    src={url}
-    title='This is me!'
-  />
-);
+const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
+  if (url === 'avatar_url') {
+    return (
+      <div>Skeleton here</div>
+    );
+  }
+
+  return (
+    <img
+      alt='Profile picture'
+      className='picture'
+      src={url}
+      title='This is me!'
+    />
+  );
+};
 
 const Name = ({ name }: { name: string }): JSX.Element => {
   if (name === 'initial') {
@@ -66,7 +74,6 @@ const Info = (): JSX.Element => {
       }
     };
     void fetchUser();
-    //setTimeout(fetchUser, 5000);
   }, []);
 
   return (
