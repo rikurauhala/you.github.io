@@ -4,7 +4,7 @@ import LanguageBar from './LanguageBar';
 
 const Project = ({ repository }: { repository: Repository }): JSX.Element => (
   <Grid item xs={12} md={6} style={{display: 'flex'}}>
-    <Card style={{backgroundColor: '#05121c', width: '100%', border: '#0f3552 1px solid'}}>
+    <Card style={{backgroundColor: '#051222', width: '100%', border: '#0f3552 1px solid'}}>
       <CardContent>
         <Link href={repository.html_url}>
           <Typography gutterBottom variant='h6' component='h2'>
@@ -20,7 +20,7 @@ const Project = ({ repository }: { repository: Repository }): JSX.Element => (
       <LanguageBar languagesUrl={repository.languages_url} />
       </CardContent>
       <CardContent>
-        <Typography variant='body2' component='p' style={{color: '#465557'}}>
+        <Typography variant='body2' component='p' style={{color: '#5e707a'}}>
           {repository.topics
             .filter(topic => topic !== 'portfolio')
             .map(topic => 
