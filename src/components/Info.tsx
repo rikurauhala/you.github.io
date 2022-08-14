@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { Octokit } from 'octokit';
 
-import { Typography } from '@mui/material';
+import { Chip, Typography } from '@mui/material';
+import PlaceIcon from '@mui/icons-material/Place';
 
 import { username } from '../config';
 
 import { UserFull } from '../types/types';
 
 import { initialUserFull } from '../utils/initialObjects';
-
-import locIcon from '../assets/icons/details/loc.svg';
 
 import './Info.css';
 
@@ -46,8 +45,8 @@ const Bio = ({ bio }: { bio: string }): JSX.Element => (
 );
 
 const Location = ({ location }: { location: string }): JSX.Element => (
-  <div className='details'>
-    <img src={locIcon as string} className='icon-info' title='Location' /> {location}
+  <div className='location'>
+    <Chip color='primary' icon={<PlaceIcon fontSize='small'/>} label={location} />
   </div>
 );
 
