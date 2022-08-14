@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Octokit } from 'octokit';
 
-import { Link, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 import { username } from '../config';
 
@@ -11,9 +11,6 @@ import { UserFull } from '../types/types';
 import { initialUserFull } from '../utils/initialObjects';
 
 import locIcon from '../assets/icons/details/loc.svg';
-
-import ghIcon from '../assets/icons/social/gh.svg';
-import liIcon from '../assets/icons/social/li.svg';
 
 import './Info.css';
 
@@ -54,31 +51,6 @@ const Location = ({ location }: { location: string }): JSX.Element => (
   </div>
 );
 
-const Socials = (): JSX.Element => (
-  <>
-    <Social 
-      url='https://github.com/rikurauhala'
-      icon={ghIcon as string}
-      title='See my code on GitHub'
-    />
-    <Social
-      url='https://www.linkedin.com/in/rikurauhala/'
-      icon={liIcon as string}
-      title='Connect with me on LinkedIn'
-    />
-  </>
-);
-
-const Social = ({ url, icon, title }: { url: string, icon: string, title: string }): JSX.Element => (
-  <Link href={url} className='link-social' target='_blank'>
-    <img
-      className='icon-social'
-      src={icon}
-      title={title}
-    />
-  </Link>
-);
-
 const Info = (): JSX.Element => {
   const [user, setUser] = useState<UserFull>(initialUserFull);
 
@@ -104,7 +76,6 @@ const Info = (): JSX.Element => {
       <Name name={user.name} />
       <Bio bio={user.bio} />
       <Location location={user.location} />
-      <Socials />
     </div>
   );
 };
