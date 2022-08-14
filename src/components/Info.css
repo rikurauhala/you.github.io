@@ -11,9 +11,10 @@
 
 .bio {
   color: #8bb4f7;
-  margin: 0.5rem 0;
+  margin: 0.5rem;
 }
 
-.location {
-  margin: 1rem 0;
+.detail {
+  display: inline-block;
+  margin: 0.8rem 0.3rem;
 }

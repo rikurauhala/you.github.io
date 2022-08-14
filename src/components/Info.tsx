@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { Octokit } from 'octokit';
 
-import { Chip, Typography } from '@mui/material';
+import { Chip, Tooltip, Typography } from '@mui/material';
+import WorkIcon from '@mui/icons-material/Work';
 import PlaceIcon from '@mui/icons-material/Place';
 
 import { username } from '../config';
@@ -52,9 +53,26 @@ const Bio = ({ bio }: { bio: string }): JSX.Element => (
   </div>
 );
 
+const Details = ({ company, location }: { company: string, location: string }): JSX.Element => (
+  <>
+    <Company company={company} />
+    <Location location={location} />
+  </>
+);
+
+const Company = ({ company }: { company: string }): JSX.Element => (
+  <div className='detail'>
+    <Tooltip arrow enterTouchDelay={0} title='Company'>
+      <Chip color='primary' icon={<WorkIcon fontSize='small'/>} label={company} />
+    </Tooltip>
+  </div>
+);
+
 const Location = ({ location }: { location: string }): JSX.Element => (
-  <div className='location'>
-    <Chip color='primary' icon={<PlaceIcon fontSize='small'/>} label={location} />
+  <div className='detail'>
+    <Tooltip arrow enterTouchDelay={0} title='Location'>
+      <Chip color='primary' icon={<PlaceIcon fontSize='small'/>} label={location} />
+    </Tooltip>
   </div>
 );
 
@@ -81,7 +99,7 @@ const Info = (): JSX.Element => {
       <ProfilePicture url={user.avatar_url} />
       <Name name={user.name} />
       <Bio bio={user.bio} />
-      <Location location={user.location} />
+      <Details company={user.company} location={user.location} />
     </div>
   );
 };
