@@ -17,7 +17,11 @@ const Projects = ({ repositories }: { repositories: Array<Repository> }): JSX.El
     <>
       <Subtitle subtitle={subtitle} />
       <Paragraph content={content} />
-      <ProjectGrid repositories={repositories} />
+      {
+        repositories.length > 0
+          ? <ProjectGrid repositories={repositories} />
+          : <Paragraph content='No projects yet!' />
+      }
     </>
   );
 };
