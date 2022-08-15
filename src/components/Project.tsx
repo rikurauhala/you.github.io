@@ -17,13 +17,13 @@ const Project = ({ repository }: { repository: Repository }): JSX.Element => (
         <Typography variant='body2' component='p' style={{color: '#fff'}}>
           {repository.description}
         </Typography>
-      <LanguageBar languagesUrl={repository.languages_url} />
+        <LanguageBar languagesUrl={repository.languages_url} />
       </CardContent>
       <CardContent>
         <Typography variant='body2' component='p' style={{color: '#5e707a'}}>
           {repository.topics
             .filter(topic => topic !== 'portfolio')
-            .map(topic => 
+            .map(topic =>
               <span key={topic}>#{topic} </span>
             )}
         </Typography>

@@ -99,7 +99,7 @@ export interface RepositoryFull {
   web_commit_signoff_required: boolean
 }
 
-type ToBeOmitted = 
+type ToBeOmitted =
   | 'bio'
   | 'blog'
   | 'company'
@@ -149,5 +149,5 @@ export interface UserFull {
   twitter_username: string
   type: string
   updated_at: string
-  url: string 
+  url: string
 }

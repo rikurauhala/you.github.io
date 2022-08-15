@@ -33,10 +33,10 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
 
   const barLength = Object
     .entries(languages)
-    .map(pairs => 
+    .map(pairs =>
       [pairs[0], (parseInt(pairs[1])/totalBytes*100)+'%']
     );
-  
+
   return (
     <div className='languageBar'>
       {

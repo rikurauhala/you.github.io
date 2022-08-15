@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 
 import { Repository } from '../types/types';
 
-import Project from './Project'; 
+import Project from './Project';
 
 const ProjectGrid = ({ repositories }: { repositories: Array<Repository> }): JSX.Element => (
   <Grid container spacing={2}>
