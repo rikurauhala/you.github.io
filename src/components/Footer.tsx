@@ -1,11 +1,14 @@
+import { Link } from '@mui/material';
+
+import { name, repository, url } from '../config';
+
 import './Footer.css';
 
 const Footer = () => {
   return (
     <div className='footer'>
       <hr/>
-      rauhala.io | Riku Rauhala | 2022 |&nbsp;
-      <a href="https://github.com/rikurauhala/rikurauhala.github.io">Source code</a>
+      {url} | {name} | 2022 | <Link href={repository}>Source code</Link>
     </div>
   );
 };

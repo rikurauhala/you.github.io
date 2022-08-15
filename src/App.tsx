@@ -9,7 +9,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-import { keyword, username } from './config';
+import { keyword, name, username } from './config';
 
 import { Repository, RepositoryFull } from './types/types';
 
@@ -33,6 +33,7 @@ const App = (): JSX.Element => {
     .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime());
 
   useEffect(() => {
+    document.title = name;
     const fetchRepositories = async () => {
       try {
         const octokit = new Octokit();
