@@ -7,7 +7,9 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-import { keyword, name } from './config';
+import { keyword } from './config';
+
+import { setTitle } from './utils/helper';
 
 import octokitService from './services/octokit';
 
@@ -37,7 +39,7 @@ const App = (): JSX.Element => {
   };
 
   useEffect(() => {
-    document.title = name;
+    setTitle();
     void octokitService.getRepositories(setState);
   }, []);
 
