@@ -2,7 +2,7 @@ import { Octokit } from 'octokit';
 
 import { username } from '../config';
 
-import { RepositoryFull } from '../types/types';
+import { RepositoryFull, UserFull } from '../types/types';
 
 const octokit = new Octokit();
 
@@ -18,4 +18,16 @@ const getRepositories = (setState: (arg0: RepositoryFull[]) => void) => {
   void fetchRepositories();
 };
 
-export default { getRepositories };
+const getUser = (setState: (arg0: UserFull) => void) => {
+  const fetchUser = async () => {
+    try {
+      const response = await octokit.request(`GET /users/${username}`);
+      setState(response.data as UserFull);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  void fetchUser();
+};
+
+export default { getRepositories, getUser };

@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { Octokit } from 'octokit';
-
 import { Chip, Skeleton, Tooltip, Typography } from '@mui/material';
 import PlaceIcon from '@mui/icons-material/Place';
 import WorkIcon from '@mui/icons-material/Work';
 
-import { username } from '../config';
+import octokitService from '../services/octokit';
 
 import { UserFull } from '../types/types';
 
@@ -82,17 +80,12 @@ const Location = ({ location }: { location: string }): JSX.Element => (
 const Info = (): JSX.Element => {
   const [user, setUser] = useState<UserFull>(initialUserFull);
 
+  const setState = (userFromAPI: UserFull) => {
+    setUser(userFromAPI);
+  };
+
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const octokit = new Octokit();
-        const response = await octokit.request(`GET /users/${username}`);
-        setUser(response.data as UserFull);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    void fetchUser();
+    void octokitService.getUser(setState);
   }, []);
 
   return (
