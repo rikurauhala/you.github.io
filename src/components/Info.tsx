@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { Octokit } from 'octokit';
 
-import { Chip, Tooltip, Typography } from '@mui/material';
-import WorkIcon from '@mui/icons-material/Work';
+import { Chip, Skeleton, Tooltip, Typography } from '@mui/material';
 import PlaceIcon from '@mui/icons-material/Place';
+import WorkIcon from '@mui/icons-material/Work';
 
 import { username } from '../config';
 
@@ -15,9 +15,20 @@ import { initialUserFull } from '../utils/initialObjects';
 import './Info.css';
 
 const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
+  const style = {
+    backgroundColor: '#5e707a',
+    color: '#5e707a',
+    height: '200px',
+    margin: '2rem auto',
+    width: '200px'
+  };
+
   if (url === 'avatar_url') {
     return (
-      <div>Skeleton here</div>
+      <Skeleton
+        style={style}
+        variant='circular'
+      />
     );
   }
 
@@ -31,19 +42,11 @@ const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
   );
 };
 
-const Name = ({ name }: { name: string }): JSX.Element => {
-  if (name === 'initial') {
-    return (
-      <div>Skeleton here</div>
-    );
-  }
-
-  return (
-    <Typography variant='h4' component='h1'>
-      {name}
-    </Typography>
-  );
-};
+const Name = ({ name }: { name: string }): JSX.Element => (
+  <Typography variant='h4' component='h1'>
+    {name}
+  </Typography>
+);
 
 const Bio = ({ bio }: { bio: string }): JSX.Element => (
   <div className='bio'>
