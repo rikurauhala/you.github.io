@@ -1,5 +1,5 @@
-export const keyword = 'portfolio';
-export const name = 'Riku Rauhala';
-export const repository = 'https://github.com/rikurauhala/rikurauhala.github.io';
-export const username = 'rikurauhala';
-export const url = 'rauhala.io';
+export const keyword = process.env.REACT_APP_KEYWORD || 'portfolio';
+export const name = process.env.REACT_APP_NAME || 'Firstname Lastname';
+export const repository = process.env.REACT_APP_REPOSITORY || 'https://github.com/username/repository';
+export const username = process.env.REACT_APP_USERNAME || 'username';
+export const url = process.env.REACT_APP_URL || repository;
