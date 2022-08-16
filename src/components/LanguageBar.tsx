@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Tooltip } from '@mui/material';
 
-import { Octokit } from 'octokit';
+import octokitService from '../services/octokit';
 
 import { colors } from '../utils/colors';
 
@@ -11,17 +11,12 @@ import './LanguageBar.css';
 const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
   const [languages, setLanguages] = useState<Array<string>>([]);
 
+  const setState = (languagesFromAPI: Array<string>) => {
+    setLanguages(languagesFromAPI);
+  };
+
   useEffect(() => {
-    const fetchLanguages = async () => {
-      try {
-        const octokit = new Octokit();
-        const response = await octokit.request(`GET ${languagesUrl}`);
-        setLanguages(response.data as Array<string>);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    void fetchLanguages();
+    void octokitService.getLanguages(languagesUrl, setState);
   }, []);
 
   const totalBytes = Object
