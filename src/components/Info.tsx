@@ -86,10 +86,8 @@ const Info = (): JSX.Element => {
     const fetchUser = async () => {
       try {
         const octokit = new Octokit();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const { data } = await octokit.request(`GET /users/${username}`);
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        setUser(data);
+        const response = await octokit.request(`GET /users/${username}`);
+        setUser(response.data as UserFull);
       } catch (error) {
         console.log(error);
       }

@@ -37,10 +37,8 @@ const App = (): JSX.Element => {
     const fetchRepositories = async () => {
       try {
         const octokit = new Octokit();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const { data } = await octokit.request(`GET /users/${username}/repos`);
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        setRepositories(data);
+        const response = await octokit.request(`GET /users/${username}/repos`);
+        setRepositories(response.data as Array<RepositoryFull>);
       } catch (error) {
         console.log(error);
       }

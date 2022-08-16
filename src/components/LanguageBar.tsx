@@ -15,10 +15,8 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
     const fetchLanguages = async () => {
       try {
         const octokit = new Octokit();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const { data } = await octokit.request(`GET ${languagesUrl}`);
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        setLanguages(data);
+        const response = await octokit.request(`GET ${languagesUrl}`);
+        setLanguages(response.data as Array<string>);
       } catch (error) {
         console.log(error);
       }
