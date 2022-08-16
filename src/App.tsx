@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { Container } from '@mui/material';
 
-import { Octokit } from 'octokit';
-
 import Info from './components/Info';
 import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-import { keyword, name, username } from './config';
+import { keyword, name } from './config';
+
+import octokitService from './services/octokit';
 
 import { Repository, RepositoryFull } from './types/types';
 
@@ -32,18 +32,13 @@ const App = (): JSX.Element => {
     }))
     .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime());
 
+  const setState = (repositoriesFromAPI: Array<RepositoryFull>) => {
+    setRepositories(repositoriesFromAPI);
+  };
+
   useEffect(() => {
     document.title = name;
-    const fetchRepositories = async () => {
-      try {
-        const octokit = new Octokit();
-        const response = await octokit.request(`GET /users/${username}/repos`);
-        setRepositories(response.data as Array<RepositoryFull>);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    void fetchRepositories();
+    void octokitService.getRepositories(setState);
   }, []);
 
   return (
