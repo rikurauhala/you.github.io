@@ -12,8 +12,8 @@ import ProjectGrid from './ProjectGrid';
 
 const Projects = (): JSX.Element => {
   const [repositories, setRepositories] = useState<Array<RepositoryFull>>([]);
-  const filteredRepositories: Array<Repository> = repositories
-    .filter(repository => !repository.fork && repository.topics.includes(keyword))
+  let filteredRepositories: Array<Repository> = repositories
+    .filter(repository => !repository.fork)
     .map(repository => ({
       description: repository.description,
       homepage: repository.homepage,
@@ -26,6 +26,13 @@ const Projects = (): JSX.Element => {
       year: repository.created_at.substring(0,4)
     }))
     .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime());
+
+  if (keyword.length > 0) {
+    filteredRepositories = filteredRepositories
+      .filter(repository =>
+        repository.topics.includes(keyword)
+      );
+  }
 
   const setState = (repositoriesFromAPI: Array<RepositoryFull>) => {
     setRepositories(repositoriesFromAPI);
