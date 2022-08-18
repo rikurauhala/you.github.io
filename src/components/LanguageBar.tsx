@@ -4,7 +4,7 @@ import { Tooltip } from '@mui/material';
 
 import octokitService from '../services/octokit';
 
-import { colors } from '../utils/colors';
+import colors from '../utils/colors';
 
 import './LanguageBar.css';
 
