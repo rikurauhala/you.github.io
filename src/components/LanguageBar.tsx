@@ -30,6 +30,26 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
       [pairs[0], (parseInt(pairs[1])/totalBytes*100)+'%']
     );
 
+  const noLanguages = languages
+    && Object.keys(languages).length === 0
+    && Object.getPrototypeOf(languages) === Object.prototype;
+
+  if (noLanguages) {
+    return (
+      <div className='languageBar'>
+        <Tooltip arrow enterTouchDelay={0} title='No languages!'>
+          <div
+            className='language'
+            style={{
+              backgroundColor: '#0f3552',
+              width: '100%'
+            }}
+          />
+        </Tooltip>
+      </div>
+    );
+  }
+
   return (
     <div className='languageBar'>
       {
