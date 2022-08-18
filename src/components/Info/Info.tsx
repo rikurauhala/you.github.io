@@ -4,11 +4,11 @@ import { Chip, Skeleton, Tooltip, Typography } from '@mui/material';
 import PlaceIcon from '@mui/icons-material/Place';
 import WorkIcon from '@mui/icons-material/Work';
 
-import octokitService from '../services/octokit';
+import octokitService from '../../services/octokit';
 
-import { UserFull } from '../types/types';
+import { UserFull } from '../../types/types';
 
-import { initialUserFull } from '../utils/initialObjects';
+import { initialUserFull } from '../../utils/initialObjects';
 
 import './Info.css';
 

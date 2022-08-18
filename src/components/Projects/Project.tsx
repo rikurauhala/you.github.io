@@ -1,5 +1,5 @@
 import { Card, CardContent, Grid, Link, Typography } from '@mui/material';
-import { Repository } from '../types/types';
+import { Repository } from '../../types/types';
 import LanguageBar from './LanguageBar';
 
 const ProjectName = ({ url, name }: { url: string, name: string }): JSX.Element => (

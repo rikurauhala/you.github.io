@@ -1,6 +1,6 @@
 import { Link } from '@mui/material';
 
-import { name, repository, url } from '../config';
+import { name, repository, url } from '../../config';
 
 import './Footer.css';
 

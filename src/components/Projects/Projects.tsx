@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import { keyword } from '../config';
+import { keyword } from '../../config';
 
-import octokitService from '../services/octokit';
+import octokitService from '../../services/octokit';
 
-import { Repository, RepositoryFull } from '../types/types';
+import { Repository, RepositoryFull } from '../../types/types';
 
-import Subtitle from './Subtitle';
-import Paragraph from './Paragraph';
+import Subtitle from '../Subtitle';
+import Paragraph from '../Paragraph';
 import ProjectGrid from './ProjectGrid';
 
 const Projects = (): JSX.Element => {

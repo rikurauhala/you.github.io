@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 
-import { Repository } from '../types/types';
+import { Repository } from '../../types/types';
 
 import Project from './Project';
 

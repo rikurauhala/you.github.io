@@ -1,7 +1,7 @@
 import { Link, Typography } from '@mui/material';
 
-import Subtitle from './Subtitle';
-import Paragraph from './Paragraph';
+import Subtitle from '../Subtitle';
+import Paragraph from '../Paragraph';
 
 const About = () => {
   const subtitle = 'About';
