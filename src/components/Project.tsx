@@ -16,21 +16,32 @@ const ProjectYear = ({ year }: { year: string }): JSX.Element => (
   </Typography>
 );
 
-const ProjectDescription = ({ description }: { description: string }): JSX.Element => (
-  <Typography variant='body2' component='p' style={{color: '#fff'}}>
-    {description}
-  </Typography>
-);
+const ProjectDescription = ({ description }: { description: string }): JSX.Element => {
+  if (!description) {
+    description = '[ No description ]';
+  }
 
-const ProjectTopics = ({ topics }: { topics: Array<string> }): JSX.Element => (
-  <Typography variant='body2' component='p' style={{color: '#5e707a'}}>
-    {topics
-      .filter(topic => topic !== 'portfolio')
-      .map(topic =>
-        <span key={topic}>#{topic} </span>
-      )}
-  </Typography>
-);
+  return (
+    <Typography variant='body2' component='p' style={{color: '#fff'}}>
+      {description}
+    </Typography>
+  );
+};
+
+const ProjectTopics = ({ topics }: { topics: Array<string> }): JSX.Element => {
+  if (topics.length === 0) {
+    topics.push('no-topics-yet');
+  }
+  return (
+    <Typography variant='body2' component='p' style={{color: '#5e707a'}}>
+      {topics
+        .filter(topic => topic !== 'portfolio')
+        .map(topic =>
+          <span key={topic}>#{topic} </span>
+        )}
+    </Typography>
+  );
+};
 
 const Project = ({ repository }: { repository: Repository }): JSX.Element => (
   <Grid item xs={12} md={6} style={{display: 'flex'}}>
