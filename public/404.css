@@ -1,0 +1,31 @@
+body {
+  background-color: #05121c;
+  color: #fff;
+  font-family: Roboto;
+}
+
+a {
+  white-space: nowrap;
+}
+
+a:link, a:visited {
+  color: #8bb4f7;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8bb4f7;
+  text-decoration: underline;
+}
+
+.not-found {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+  
+.huge {
+  font-size: 500%;
+}
