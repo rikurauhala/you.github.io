@@ -3,8 +3,8 @@ import Location from './Location';
 
 const Details = ({ company, location }: { company: string, location: string }): JSX.Element => (
   <>
-    <Company company={company} />
-    <Location location={location} />
+    {company && <Company company={company} />}
+    {location && <Location location={location} />}
   </>
 );
 
