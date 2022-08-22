@@ -10,7 +10,7 @@ import ProjectDescription from './ProjectDescription';
 import ProjectTopics from './ProjectTopics';
 
 const Project = ({ repository }: { repository: Repository }): JSX.Element => (
-  <Grid item xs={12} md={6} style={{display: 'flex'}}>
+  <Grid item xs={12} md={6} lg={4} style={{display: 'flex'}}>
     <Card style={{backgroundColor: '#051222', width: '100%', border: '#0f3552 1px solid'}}>
       <CardContent>
         <ProjectName url={repository.html_url} name={repository.name} />

@@ -17,7 +17,7 @@ const App = (): JSX.Element => {
   }, []);
 
   return (
-    <Container maxWidth='md'>
+    <Container maxWidth='lg'>
       <Info />
       <About />
       <Projects />
