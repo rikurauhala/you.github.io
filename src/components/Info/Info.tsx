@@ -29,7 +29,7 @@ const Info = (): JSX.Element => {
       <ProfilePicture url={user.avatar_url} />
       <Name name={user.name} />
       <Bio bio={user.bio} />
-      <Details company={user.company} location={user.location} />
+      <Details company={user.company} location={user.location} twitter={user.twitter_username} />
     </div>
   );
 };
