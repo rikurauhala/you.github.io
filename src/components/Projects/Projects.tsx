@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import ReactMarkdown from 'react-markdown';
+
 import { keyword } from '../../config';
+
+import Content from '../../content/projects.md';
 
 import octokitService from '../../services/octokit';
 
@@ -12,6 +16,8 @@ import ProjectGrid from './ProjectGrid';
 
 const Projects = (): JSX.Element => {
   const [repositories, setRepositories] = useState<Array<RepositoryFull>>([]);
+  const [projectsText, setProjectsText] = useState('');
+
   let filteredRepositories: Array<Repository> = repositories
     .filter(repository => !repository.fork)
     .map(repository => ({
@@ -40,20 +46,20 @@ const Projects = (): JSX.Element => {
 
   useEffect(() => {
     void octokitService.getRepositories(setState);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    fetch(Content)
+      .then(res => res.text()).then(text => setProjectsText(text))
+      .catch(error => console.error(error));
   }, []);
 
   const subtitle = 'Projects';
-  const content = `
-    Here is a selection of projects I have worked on.
-    Click the name of the project to view the source code and documentation on GitHub.
-    Hover over or tap the colored bar to see which languages the code base consists of.
-    The last section lists relevant topics.
-  `;
 
   return (
     <>
       <Subtitle subtitle={subtitle} />
-      <Paragraph content={content} />
+      <ReactMarkdown>
+        {projectsText}
+      </ReactMarkdown>
       {
         repositories.length > 0
           ? <ProjectGrid repositories={filteredRepositories} />
