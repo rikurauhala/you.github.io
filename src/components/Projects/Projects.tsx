@@ -45,7 +45,6 @@ const Projects = (): JSX.Element => {
 
   useEffect(() => {
     void octokitService.getRepositories(setState);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     fetch(Content)
       .then(res => res.text()).then(text => setProjectsText(text))
       .catch(error => console.error(error));
