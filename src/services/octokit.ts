@@ -1,10 +1,10 @@
 import { Octokit } from 'octokit';
 
-import { username } from '../config';
+import { token, username } from '../config';
 
 import { RepositoryFull, UserFull } from '../types/types';
 
-const octokit = new Octokit();
+const octokit = new Octokit({ auth: token });
 
 const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) => {
   const fetchLanguages = async () => {
