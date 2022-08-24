@@ -12,7 +12,3 @@ I am working on making an easily configurable version so anyone can easily displ
 - Profile picture by [Solana Kim](https://github.com/Solanakim)
 - Shoutout to [Full stack open](https://fullstackopen.com/en/) for teaching me everything needed for this project
 - Shoutout to [gitname](https://github.com/gitname) for providing [this](https://github.com/gitname/react-gh-pages#readme) great tutorial for getting started
-
-## License
-
-No license for now but feel free to make your own version!
