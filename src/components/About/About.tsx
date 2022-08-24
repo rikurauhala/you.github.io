@@ -9,7 +9,8 @@ const About = () => {
 
   useEffect(() => {
     fetch(Content)
-      .then(res => res.text()).then(text => setAboutText(text))
+      .then(content => content.text())
+      .then(text => setAboutText(text))
       .catch(error => console.error(error));
   }, []);
 

@@ -46,7 +46,8 @@ const Projects = (): JSX.Element => {
   useEffect(() => {
     void octokitService.getRepositories(setState);
     fetch(Content)
-      .then(res => res.text()).then(text => setProjectsText(text))
+      .then(content => content.text())
+      .then(text => setProjectsText(text))
       .catch(error => console.error(error));
   }, []);
 
