@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import ReactMarkdown from 'react-markdown';
 
+import { Typography } from '@mui/material';
+
 import { keyword } from '../../config';
 
 import Content from '../../content/projects.md';
@@ -10,7 +12,6 @@ import octokitService from '../../services/octokit';
 
 import { Repository, RepositoryFull } from '../../types/types';
 
-import Paragraph from '../Paragraph';
 import ProjectGrid from './ProjectGrid';
 
 const Projects = (): JSX.Element => {
@@ -59,7 +60,7 @@ const Projects = (): JSX.Element => {
       {
         repositories.length > 0
           ? <ProjectGrid repositories={filteredRepositories} />
-          : <Paragraph content='No projects yet!' />
+          : <Typography paragraph component='p' variant='body1'> No projects yet!</Typography>
       }
     </>
   );
