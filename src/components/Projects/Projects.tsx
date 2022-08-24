@@ -10,7 +10,6 @@ import octokitService from '../../services/octokit';
 
 import { Repository, RepositoryFull } from '../../types/types';
 
-import Subtitle from '../Subtitle';
 import Paragraph from '../Paragraph';
 import ProjectGrid from './ProjectGrid';
 
@@ -52,11 +51,8 @@ const Projects = (): JSX.Element => {
       .catch(error => console.error(error));
   }, []);
 
-  const subtitle = 'Projects';
-
   return (
     <>
-      <Subtitle subtitle={subtitle} />
       <ReactMarkdown>
         {projectsText}
       </ReactMarkdown>
