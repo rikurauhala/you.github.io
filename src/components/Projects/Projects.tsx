@@ -13,6 +13,7 @@ import octokitService from '../../services/octokit';
 import { Repository, RepositoryFull } from '../../types/types';
 
 import ProjectGrid from './ProjectGrid';
+import SearchBar from './SearchBar';
 
 const Projects = (): JSX.Element => {
   const [repositories, setRepositories] = useState<Array<RepositoryFull>>([]);
@@ -57,6 +58,9 @@ const Projects = (): JSX.Element => {
       <ReactMarkdown>
         {projectsText}
       </ReactMarkdown>
+      <div style={{margin: '15px 0'}}>
+        <SearchBar />
+      </div>
       {
         repositories.length > 0
           ? <ProjectGrid repositories={filteredRepositories} />
