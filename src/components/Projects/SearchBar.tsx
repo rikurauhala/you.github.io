@@ -1,6 +1,8 @@
 import Paper from '@mui/material/Paper';
+
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
+
 import SearchIcon from '@mui/icons-material/Search';
 
 const SearchBar = () => {
@@ -13,16 +15,18 @@ const SearchBar = () => {
   };
 
   return (
-    <Paper component='form' style={style}>
-      <InputBase
-        inputProps={{ 'aria-label': 'Search' }}
-        placeholder='Search'
-        sx={{ color: '#fff', flex: 1, ml: 1 }}
-      />
-      <IconButton aria-label='search' sx={{ color: '#fff', padding: '10px' }} type='button'>
-        <SearchIcon />
-      </IconButton>
-    </Paper>
+    <div style={{margin: '15px 0'}}>
+      <Paper component='form' style={style}>
+        <InputBase
+          inputProps={{ 'aria-label': 'Search' }}
+          placeholder='Search'
+          sx={{ color: '#fff', flex: 1, ml: 1 }}
+        />
+        <IconButton aria-label='search' sx={{ color: '#fff', padding: '10px' }} type='button'>
+          <SearchIcon />
+        </IconButton>
+      </Paper>
+    </div>
   );
 };
 
