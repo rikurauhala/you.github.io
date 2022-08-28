@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchBar = () => {
+const SearchBar = ({ setState }) => {
   const style = {
     alignItems: 'center',
     backgroundColor: '#051222',
@@ -19,6 +19,7 @@ const SearchBar = () => {
       <Paper component='form' style={style}>
         <InputBase
           inputProps={{ 'aria-label': 'Search' }}
+          onChange={() => setState(event.target.value)}
           placeholder='Search'
           sx={{ color: '#fff', flex: 1, ml: 1 }}
         />

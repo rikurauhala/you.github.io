@@ -17,6 +17,7 @@ import SearchBar from './SearchBar';
 
 const Projects = (): JSX.Element => {
   const [repositories, setRepositories] = useState<Array<RepositoryFull>>([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [projectsText, setProjectsText] = useState('');
 
   let filteredRepositories: Array<Repository> = repositories
@@ -32,7 +33,10 @@ const Projects = (): JSX.Element => {
       topics: repository.topics,
       year: repository.created_at.substring(0,4)
     }))
-    .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime());
+    .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime())
+    .filter(repository =>
+      repository.description.toLowerCase().includes(searchQuery.toString().toLowerCase())
+    );
 
   if (keyword.length > 0) {
     filteredRepositories = filteredRepositories
@@ -41,12 +45,16 @@ const Projects = (): JSX.Element => {
       );
   }
 
-  const setState = (repositoriesFromAPI: Array<RepositoryFull>) => {
+  const setRepositoriesState = (repositoriesFromAPI: Array<RepositoryFull>) => {
     setRepositories(repositoriesFromAPI);
   };
 
+  const setSearchQueryState = (query: string) => {
+    setSearchQuery(query);
+  };
+
   useEffect(() => {
-    void octokitService.getRepositories(setState);
+    void octokitService.getRepositories(setRepositoriesState);
     fetch(Content)
       .then(content => content.text())
       .then(text => setProjectsText(text))
@@ -58,9 +66,7 @@ const Projects = (): JSX.Element => {
       <ReactMarkdown>
         {projectsText}
       </ReactMarkdown>
-      <div style={{margin: '15px 0'}}>
-        <SearchBar />
-      </div>
+      <SearchBar setState={setSearchQueryState} />
       {
         repositories.length > 0
           ? <ProjectGrid repositories={filteredRepositories} />
