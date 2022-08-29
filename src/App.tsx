@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 import { Container } from '@mui/material';
 
@@ -7,22 +7,24 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
-import { setTitle } from './utils/helper';
+import { name } from './config';
 
 import './App.css';
 
 const App = (): JSX.Element => {
-  useEffect(() => {
-    setTitle();
-  }, []);
-
   return (
-    <Container maxWidth='lg'>
-      <Info />
-      <About />
-      <Projects />
-      <Footer />
-    </Container>
+    <>
+      <Helmet>
+        <title>{name}</title>
+        <meta name="description" content={`Personal home page of ${name}`} />
+      </Helmet>
+      <Container maxWidth='lg'>
+        <Info />
+        <About />
+        <Projects />
+        <Footer />
+      </Container>
+    </>
   );
 };
 
