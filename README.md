@@ -4,6 +4,35 @@ The source code of my personal professional website is hosted here. Created with
 
 I am working on making an easily configurable version so anyone can easily display their favourite projects! Instructions and documentation to be added.
 
+## Instructions
+
+### Installing
+
+```bash
+# Get the source code
+$ git clone git@github.com:rikurauhala/rikurauhala.github.io.git
+
+# Change directory
+$ cd rikurauhala.github.io
+
+# Install dependencies
+$ npm install
+```
+
+### Running
+
+```bash
+# Run the application
+$ npm start
+```
+
+### Deploying
+
+```bash
+# Deploy the application to GitHub pages
+$ npm run deploy -- -m "Deploy"
+```
+
 ## Credits
 
 - UI elements and icons by [Material UI](https://mui.com/)  
