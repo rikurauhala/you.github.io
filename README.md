@@ -6,6 +6,8 @@ I am working on making an easily configurable version so anyone can easily displ
 
 ## Instructions
 
+Instructions assume that you are using a Linux-based operating system and have VS Code as your editor.
+
 ### Installing
 
 ```bash
