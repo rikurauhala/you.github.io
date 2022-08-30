@@ -32,6 +32,7 @@ const Info = (): JSX.Element => {
       <Details
         company={user.company}
         location={user.location}
+        github={user.login}
         twitter={user.twitter_username}
       />
     </div>
