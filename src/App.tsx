@@ -12,11 +12,15 @@ import { name } from './config';
 import './App.css';
 
 const App = (): JSX.Element => {
+  const letter = name[0].toString().toLowerCase();
+  const favicon = /[a-z]/.test(letter) ? letter : '-';
+
   return (
     <>
       <Helmet>
         <title>{name}</title>
         <meta name="description" content={`Personal home page of ${name}`} />
+        <link rel="icon" href={`favicon/${favicon}.ico`} />
       </Helmet>
       <Container maxWidth='lg'>
         <Info />
