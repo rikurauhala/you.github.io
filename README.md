@@ -17,6 +17,13 @@ $ cd rikurauhala.github.io
 
 # Install dependencies
 $ npm install
+
+# Set up environment variables
+# Make sure to replace the default values with your own data
+$ cp .env.default .env
+
+# Write your own About section
+$ code src/content/about.md
 ```
 
 ### Running
