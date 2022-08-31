@@ -67,3 +67,10 @@ Start the application from the command line after installing the dependencies an
 # Run the application
 $ npm start
 ```
+
+### How to deploy
+
+```bash
+# Deploy the application to GitHub pages
+$ npm run deploy -- -m "Deploy"
+```
