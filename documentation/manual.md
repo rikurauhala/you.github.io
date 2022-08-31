@@ -60,6 +60,15 @@ REACT_APP_USERNAME='username'
 # Custom url, optional
 REACT_APP_URL='www.example.com'
 ```
+
+#### Projects
+
+The benefit of using this application as your portfolio (instead of just using your GitHub profile) is the ability to choose which projects you want to display. To choose the projects to be displayed, start by specifying a *keyword* in the configuration file. By default, the keyword is "portfolio". You can change the keyword if you wish.
+
+Next, take a look at your public repositories on your GitHub profile. Mark the relevant projects by adding the chosen keyword in the [topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) section of each project repository. I would also recommend adding other relevant topics as they will get displayed in the projects section.
+
+In the projects section the projects are listed by update date, latest first. This way your latest and most active projects will always be at the top of the list.
+
 #### Content
 
 The application has two diffent configurable sections for user content. Content is written using [Markdown](https://www.markdownguide.org/cheat-sheet/).
