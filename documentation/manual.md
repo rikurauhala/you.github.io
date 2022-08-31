@@ -97,3 +97,13 @@ After making sure the application works as intended and it displays the data you
 # Deploy the application to GitHub pages
 $ npm run deploy -- -m "Deploy"
 ```
+
+## Resources
+
+Here is a collection of useful resources.
+
+- [GitHub API](https://docs.github.com/en/rest) documentation
+- [Markdown](https://www.markdownguide.org/cheat-sheet/) cheatsheet for writing content
+- [Material UI](https://mui.com/material-ui/getting-started/overview/) documentation
+- [TypeScript](https://www.typescriptlang.org/docs/) documentation
+- [TypeScript](https://fullstackopen.com/en/part9) learning resources
