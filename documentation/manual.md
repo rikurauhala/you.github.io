@@ -80,6 +80,10 @@ Contents of the *Projects* section can be written by editing the file **src/cont
 
 Adding custom sections should be straightforward. Create a new component in the **src/components** directory and write the contents in a new markdown (.md) file in the **src/content** directory. For example, you may want to consider creating a custom section for your professional social media accounts.
 
+#### Custom domain
+
+If you deploy the application to GitHub Pages, it is possible to use a custom domain. In the **public** directory, create a file called `CNAME`. In the file, write your custom domain name such as www.example.com. Refer to the official GitHub Pages [documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages) for more detailed instructions.
+
 ### How to run
 
 Start the application from the command line after installing the dependencies and configuring the application to use your username and other details. For production, I would recommend deploying the app to GitHub Pages. See instructions below.
@@ -91,7 +95,7 @@ $ npm start
 
 ### How to deploy
 
-After making sure the application works as intended and it displays the data you want, you can deploy it to [GitHub Pages](https://pages.github.com/).
+After making sure the application works as intended and it displays the data you want, you can deploy it to [GitHub Pages](https://pages.github.com/). It is recommended to host the source code in a repository named `username.github.io`. To use a custom domain, see instructions above.
 
 ```bash
 # Deploy the application to GitHub pages
