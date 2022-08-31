@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 const Bio = ({ bio }: { bio: string }): JSX.Element => (
   <div className='bio'>

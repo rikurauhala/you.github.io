@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import ReactMarkdown from 'react-markdown';
 
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 import { keyword } from '../../config';
 

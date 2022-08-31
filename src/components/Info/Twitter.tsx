@@ -1,4 +1,6 @@
-import { Chip, Link, Tooltip } from '@mui/material';
+import Chip from '@mui/material/Chip';
+import Link from '@mui/material/Link';
+import Tooltip from '@mui/material/Tooltip';
 
 import TwitterIcon from '@mui/icons-material/Twitter';
 

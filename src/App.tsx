@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-import { Container } from '@mui/material';
+import Container from '@mui/material/Container';
 
 import Info from './components/Info';
 import About from './components/About';

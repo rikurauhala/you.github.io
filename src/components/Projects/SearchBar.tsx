@@ -1,6 +1,5 @@
-import Paper from '@mui/material/Paper';
-
 import InputBase from '@mui/material/InputBase';
+import Paper from '@mui/material/Paper';
 
 const SearchBar = ({ setState }: { setState: (arg0: string) => void }) => {
   const style = {

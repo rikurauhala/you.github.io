@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Tooltip } from '@mui/material';
+import Tooltip from '@mui/material/Tooltip';
 
 import octokitService from '../../services/octokit';
 

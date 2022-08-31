@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 const Name = ({ name }: { name: string }): JSX.Element => (
   <Typography variant='h4' component='h1'>

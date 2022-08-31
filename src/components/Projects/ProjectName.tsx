@@ -1,4 +1,5 @@
-import { Link, Typography } from '@mui/material';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 
 const ProjectName = ({ url, name }: { url: string, name: string }): JSX.Element => (
   <Link href={url}>

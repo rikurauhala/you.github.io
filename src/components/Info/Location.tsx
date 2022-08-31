@@ -1,4 +1,5 @@
-import { Chip, Tooltip } from '@mui/material';
+import Chip from '@mui/material/Chip';
+import Tooltip from '@mui/material/Tooltip';
 
 import PlaceIcon from '@mui/icons-material/Place';
 

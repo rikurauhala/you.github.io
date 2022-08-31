@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 const ProjectTopics = ({ topics }: { topics: Array<string> }): JSX.Element => {
   if (topics.length === 0) {

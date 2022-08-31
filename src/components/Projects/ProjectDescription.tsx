@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 const ProjectDescription = ({ description }: { description: string }): JSX.Element => {
   if (!description) {

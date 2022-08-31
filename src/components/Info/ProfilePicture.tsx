@@ -1,4 +1,4 @@
-import { Skeleton } from '@mui/material';
+import Skeleton from '@mui/material/Skeleton';
 
 const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
   const style = {
