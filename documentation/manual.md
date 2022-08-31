@@ -30,7 +30,9 @@ $ cd rikurauhala.github.io
 $ npm install
 ```
 
-# How to configure
+### How to configure
+
+#### Configuration file
 
 The application requires some configuration. Start by renaming or copying the file `.env.default` into a new file called `.env`. Open the file in your favourite editor and replace the values with your own. It's okay to commit the .env file if you want, as it contains no secrets.
 
@@ -58,6 +60,25 @@ REACT_APP_USERNAME='username'
 # Custom url, optional
 REACT_APP_URL='www.example.com'
 ```
+#### Content
+
+The application has two diffent configurable sections for user content. Content is written using [Markdown](https://www.markdownguide.org/cheat-sheet/).
+
+##### About
+
+The first one is the *About* section. This is where you can write anything about yourself you wish to tell the people visiting your portfolio. Remember that this is intended to be your professional site so you may want to write about your education, career or professional interests. You may also provide instructions on how to contact you, for example via email or on LinkedIn.
+
+Contents of the *About* section can be written by editing the file **src/content/about.md**.
+
+##### Projects
+
+The second configurable section is the *Projects* section. Your project details are automatically fetched from GitHub, but you may want to provide some additional details here.
+
+Contents of the *Projects* section can be written by editing the file **src/content/projects.md**.
+
+##### Custom
+
+Adding custom sections should be straightforward. Create a new component in the **src/components** directory and write the contents in a new markdown (.md) file in the **src/content** directory. For example, you may want to consider creating a custom section for your professional social media accounts.
 
 ### How to run
 
@@ -69,6 +90,8 @@ $ npm start
 ```
 
 ### How to deploy
+
+After making sure the application works as intended and it displays the data you want, you can deploy it to [GitHub Pages](https://pages.github.com/).
 
 ```bash
 # Deploy the application to GitHub pages
