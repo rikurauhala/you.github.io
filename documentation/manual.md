@@ -1,6 +1,12 @@
 # User manual
 
-## Getting started 
+## About
+
+This project is a **professional portfolio website** for developers who host their source code on [GitHub](https://github.com/). This application offers an alternative to the tedious task of creating your own portfolio website.
+
+The application code is written in [TypeScript](https://www.typescriptlang.org/). However, no knowledge of JavaScript or TypeScript is required to set up the project for your own needs. Just some light configuration is needed to get started. Anyone is free to fork or clone this project and create their own version. This manual contains instructions for doing so.
+
+## Getting started
 
 ### How to install
 
