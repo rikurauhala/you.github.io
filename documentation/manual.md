@@ -29,3 +29,32 @@ $ cd rikurauhala.github.io
 # Install dependencies
 $ npm install
 ```
+
+# How to configure
+
+The application requires some configuration. Start by renaming or copying the file `.env.default` into a new file called `.env`. Open the file in your favourite editor and replace the values with your own. It's okay to commit the .env file if you want, as it contains no secrets.
+
+The contents of the .env configuration file are the following.
+
+```bash
+# KEYWORD
+# Use this keyword to control which repositories will show up in the application
+# Add the keyword to all repositories on GitHub to mark them as part of your portfolio
+REACT_APP_KEYWORD='portfolio'
+
+# NAME
+# Your full name
+REACT_APP_NAME='Firstname Lastname'
+
+# REPOSITORY
+# The repository where the source code is hosted
+REACT_APP_REPOSITORY='https://github.com/username/repository'
+
+# USERNAME
+# Your GitHub username
+REACT_APP_USERNAME='username'
+
+# URL
+# Custom url, optional
+REACT_APP_URL='www.example.com'
+```
