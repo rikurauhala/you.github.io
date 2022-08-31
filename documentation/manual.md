@@ -58,3 +58,12 @@ REACT_APP_USERNAME='username'
 # Custom url, optional
 REACT_APP_URL='www.example.com'
 ```
+
+### How to run
+
+Start the application from the command line after installing the dependencies and configuring the application to use your username and other details. For production, I would recommend deploying the app to GitHub Pages. See instructions below.
+
+```bash
+# Run the application
+$ npm start
+```
