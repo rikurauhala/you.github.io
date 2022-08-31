@@ -2,7 +2,7 @@
 
 The source code of my personal professional website is hosted here. Created with [create-react-app](https://create-react-app.dev/docs/adding-typescript/) and written in [TypeScript](https://www.typescriptlang.org/). Deployed to [GitHub pages](https://pages.github.com/) with the npm package [gh-pages](https://github.com/tschaub/gh-pages). Data is fetched from my GitHub profile using [Octokit](https://github.com/octokit/octokit.js) and the [GitHub REST API](https://docs.github.com/en/rest).
 
-I am working on making an easily configurable version so anyone can easily display their favourite projects! Instructions and documentation to be added.
+I am working on making an easily configurable version so anyone can easily display their favourite projects!
 
 ## Instructions
 
