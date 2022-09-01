@@ -35,7 +35,10 @@ const Projects = (): JSX.Element => {
     }))
     .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime())
     .filter(repository =>
-      repository.description.toLowerCase().includes(searchQuery.toString().toLowerCase())
+      repository.description.toLowerCase().includes(searchQuery.toString().toLowerCase()) ||
+      repository.topics.find(topic =>
+        topic.toLowerCase().includes(searchQuery.toString().toLowerCase())
+      )
     );
 
   if (keyword.length > 0) {
