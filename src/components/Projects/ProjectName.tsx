@@ -2,7 +2,7 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 const ProjectName = ({ url, name }: { url: string, name: string }): JSX.Element => (
-  <Link href={url}>
+  <Link href={url} target='_blank'>
     <Typography gutterBottom variant='h6' component='h2'>
       {name}
     </Typography>

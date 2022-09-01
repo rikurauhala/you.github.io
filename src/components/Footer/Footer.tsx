@@ -7,7 +7,7 @@ import './Footer.css';
 const Footer = () => (
   <div className='footer'>
     <hr/>
-    {url} | {name} | 2022 | <Link href={repository}>Source code</Link>
+    {url} | {name} | 2022 | <Link href={repository} target='_blank'>Source code</Link>
   </div>
 );
 
