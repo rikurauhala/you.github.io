@@ -20,6 +20,15 @@ const Projects = (): JSX.Element => {
   const [searchQuery, setSearchQuery] = useState('');
   const [projectsText, setProjectsText] = useState('');
 
+  const repositoryFilter = (repository: Repository) => {
+    return (
+      repository.description.toLowerCase().includes(searchQuery.toString().toLowerCase()) ||
+      repository.topics.find(topic =>
+        topic.toLowerCase().includes(searchQuery.toString().toLowerCase())
+      )
+    );
+  };
+
   let filteredRepositories: Array<Repository> = repositories
     .filter(repository => !repository.fork)
     .map(repository => ({
@@ -34,12 +43,7 @@ const Projects = (): JSX.Element => {
       year: repository.created_at.substring(0,4)
     }))
     .sort((a, b) => b.pushed_at.getTime() - a.pushed_at.getTime())
-    .filter(repository =>
-      repository.description.toLowerCase().includes(searchQuery.toString().toLowerCase()) ||
-      repository.topics.find(topic =>
-        topic.toLowerCase().includes(searchQuery.toString().toLowerCase())
-      )
-    );
+    .filter(repositoryFilter);
 
   if (keyword.length > 0) {
     filteredRepositories = filteredRepositories
