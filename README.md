@@ -42,6 +42,11 @@ $ npm start
 $ npm run deploy -- -m "Deploy"
 ```
 
+## Documentation
+
+- [Architecture](documentation/architecture.md)
+- [User manual](documentation/manual.md)
+
 ## Credits
 
 - UI elements and icons by [Material UI](https://mui.com/)  
