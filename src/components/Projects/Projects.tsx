@@ -77,7 +77,7 @@ const Projects = (): JSX.Element => {
       {
         filteredRepositories.length > 0
           ? <ProjectGrid repositories={filteredRepositories} />
-          : <Typography paragraph component='p' variant='body1'> No projects yet!</Typography>
+          : <Typography paragraph component='p' variant='body1'>No projects yet!</Typography>
       }
     </>
   );
