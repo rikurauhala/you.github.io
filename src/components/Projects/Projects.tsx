@@ -75,7 +75,7 @@ const Projects = (): JSX.Element => {
       </ReactMarkdown>
       <SearchBar setState={setSearchQueryState} />
       {
-        repositories.length > 0
+        filteredRepositories.length > 0
           ? <ProjectGrid repositories={filteredRepositories} />
           : <Typography paragraph component='p' variant='body1'> No projects yet!</Typography>
       }
