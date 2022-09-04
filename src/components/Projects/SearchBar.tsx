@@ -16,7 +16,8 @@ const SearchBar = ({ setState }: { setState: (arg0: string) => void }) => {
     <Paper component='form' style={style}>
       <InputBase
         inputProps={{ 'aria-label': 'Search' }}
-        onChange={(event) => setState(event.target.value)}
+        onChange={event => setState(event.target.value)}
+        onKeyPress={event => {event.key === 'Enter' && event.preventDefault();}}
         placeholder='Search'
         sx={{ color: '#fff', flex: 1, ml: 1 }}
       />
