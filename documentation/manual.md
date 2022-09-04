@@ -45,25 +45,27 @@ The application requires some configuration. Start by renaming or copying the fi
 The contents of the .env configuration file are the following.
 
 ```bash
-# KEYWORD
+#
+# Use this file to control the behaviour of the application
+# Remember to replace with your own values and rename to '.env'
+#
+
+# USERNAME - mandatory
+# Your GitHub username
+REACT_APP_USERNAME='username'
+
+# NAME - optional
+# Your real name
+REACT_APP_NAME='Firstname Lastname'
+
+# KEYWORD - optional
 # Use this keyword to control which repositories will show up in the application
 # Add the keyword to all repositories on GitHub to mark them as part of your portfolio
 REACT_APP_KEYWORD='portfolio'
 
-# NAME
-# Your full name
-REACT_APP_NAME='Firstname Lastname'
-
-# REPOSITORY
-# The repository where the source code is hosted
-REACT_APP_REPOSITORY='https://github.com/username/repository'
-
-# USERNAME
-# Your GitHub username
-REACT_APP_USERNAME='username'
-
-# URL
-# Custom url, optional
+# URL - optional
+# Custom url, if your application has one
+# Otherwise the url is assumed to be username.github.io
 REACT_APP_URL='www.example.com'
 ```
 
