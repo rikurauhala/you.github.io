@@ -1,14 +1,20 @@
 import Link from '@mui/material/Link';
 
-import { name, repository, url } from '../../config';
+import { name, url, username } from '../../config';
 
 import './Footer.css';
 
-const Footer = () => (
-  <div className='footer'>
-    <hr/>
-    {url} | {name} | 2022 | <Link href={repository} target='_blank'>Source code</Link>
-  </div>
-);
+const Footer = () => {
+  let address = url;
+  const source = `https://github.com/${username}/${username}.github.io`;
+  if (!url) address = `${username}.github.io`;
+
+  return (
+    <div className='footer'>
+      <hr/>
+      {address} | {name} | 2022 | <Link href={source} target='_blank'>Source code</Link>
+    </div>
+  );
+};
 
 export default Footer;
