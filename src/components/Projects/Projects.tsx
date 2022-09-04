@@ -65,12 +65,16 @@ const Projects = (): JSX.Element => {
     setSearchQuery(query);
   };
 
-  useEffect(() => {
-    void octokitService.getRepositories(setRepositoriesState);
+  const setContent = () => {
     fetch(Content)
       .then(content => content.text())
       .then(text => setProjectsText(text))
       .catch(error => console.error(error));
+  };
+
+  useEffect(() => {
+    octokitService.getRepositories(setRepositoriesState);
+    setContent();
   }, []);
 
   return (
