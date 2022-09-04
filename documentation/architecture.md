@@ -85,7 +85,31 @@ The main component is called *App.tsx*.
 
 ## User interface
 
-Write here.
+The application is a single-page web application. Users can access it via their web browser. Requests to all but the root will lead to a "404 not found" page. The main application page consists of smaller parts.
+
+### Info
+
+#### Profile picture
+
+#### Name
+
+#### Bio
+
+#### Details
+
+### About
+
+### Projects
+
+#### Search bar
+
+#### The grid
+
+### Footer
+
+-->
+
+<!--
 
 ## Application state
 
