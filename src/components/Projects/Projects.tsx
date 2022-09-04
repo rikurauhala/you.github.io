@@ -21,12 +21,17 @@ const Projects = (): JSX.Element => {
   const [projectsText, setProjectsText] = useState('');
 
   const repositoryFilter = (repository: Repository) => {
-    return (
-      repository.description.toLowerCase().includes(searchQuery.toString().toLowerCase()) ||
-      repository.topics.find(topic =>
-        topic.toLowerCase().includes(searchQuery.toString().toLowerCase())
-      )
-    );
+    if (searchQuery.length === 0) {
+      return repository;
+    }
+    if (repository.description) {
+      return (
+        repository.description.toLowerCase().includes(searchQuery.toString().toLowerCase()) ||
+        repository.topics.find(topic =>
+          topic.toLowerCase().includes(searchQuery.toString().toLowerCase())
+        )
+      );
+    }
   };
 
   let filteredRepositories: Array<Repository> = repositories
