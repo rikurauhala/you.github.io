@@ -57,11 +57,11 @@ const Projects = (): JSX.Element => {
       );
   }
 
-  const setRepositoriesState = (repositoriesFromAPI: Array<RepositoryFull>) => {
+  const setRepositoriesState = (repositoriesFromAPI: Array<RepositoryFull>): void => {
     setRepositories(repositoriesFromAPI);
   };
 
-  const setSearchQueryState = (query: string) => {
+  const setSearchQueryState = (query: string): void => {
     setSearchQuery(query);
   };
 
