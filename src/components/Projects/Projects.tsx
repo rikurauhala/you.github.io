@@ -82,7 +82,10 @@ const Projects = (): JSX.Element => {
       <ReactMarkdown>
         {projectsText}
       </ReactMarkdown>
-      <SearchBar setState={setSearchQueryState} />
+      <SearchBar
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQueryState}
+      />
       {
         filteredRepositories.length > 0
           ? <ProjectGrid repositories={filteredRepositories} />

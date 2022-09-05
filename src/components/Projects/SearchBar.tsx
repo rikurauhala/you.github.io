@@ -1,7 +1,17 @@
+import { useRef } from 'react';
+
+import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import Paper from '@mui/material/Paper';
 
-const SearchBar = ({ setState }: { setState: (arg0: string) => void }) => {
+import ClearIcon from '@mui/icons-material/Clear';
+
+interface Props {
+  searchQuery: string
+  setSearchQuery: (arg0: string) => void
+}
+
+const SearchBar = ({ searchQuery, setSearchQuery }: Props) => {
   const style = {
     alignItems: 'center',
     backgroundColor: '#051222',
@@ -12,15 +22,32 @@ const SearchBar = ({ setState }: { setState: (arg0: string) => void }) => {
     padding: '2px 4px'
   };
 
+  interface Ref {
+    value: string
+  }
+
+  const userInput = useRef<Ref>({value: ''});
+
   return (
     <Paper component='form' style={style}>
       <InputBase
-        inputProps={{ 'aria-label': 'Search' }}
-        onChange={event => setState(event.target.value)}
-        onKeyPress={event => {event.key === 'Enter' && event.preventDefault();}}
+        inputRef={userInput}
+        onChange={event => setSearchQuery(event.target.value)}
+        onKeyPress={event => event.key === 'Enter' && event.preventDefault()}
         placeholder='Search'
         sx={{ color: '#fff', flex: 1, ml: 1 }}
       />
+      { searchQuery.length > 0 &&
+        <IconButton
+          color="primary" sx={{ p: '10px' }}
+          onClick={() => {
+            userInput.current.value = '';
+            setSearchQuery('');
+          }}
+        >
+          <ClearIcon />
+        </IconButton>
+      }
     </Paper>
   );
 };
