@@ -81,37 +81,91 @@ The main component is called *App.tsx*.
 └── tsconfig.json
 ```
 
-<!--
-
 ## User interface
 
-The application is a single-page web application. Users can access it via their web browser. Requests to all but the root will lead to a "404 not found" page. The main application page consists of smaller parts.
+The program is a single-page web application. Users can access it via their web browser on various devices. Requests to all but the root address will lead to a "404 not found" page. The main application page consists of smaller parts.
 
 ### Info
 
+The *info* section consists of four smaller components. All data in this section is fetched from the GitHub API.
+
 #### Profile picture
+
+Profile picture of the user. While loading, a gray blinking skeleton component is displayed.
 
 #### Name
 
+Full name of the user. If no name has been set, the GitHub username will be used instead.
+
 #### Bio
+
+Bio of the user. Should be descriptive yet not too long. Could contain a title / position or other relevant information about the user. Examples: *Computer science student at University of Example* or *Full stack developer at Company Inc*.
 
 #### Details
 
+Other details from the profile: company, location, GitHub account name and Twitter account name. Only existing details are displayed. The details badges for the GitHub and Twitter accounts also contain links to said profiles.
+
 ### About
+
+The *About* section is expected to be customized by the person setting up the application. This section contains relevant information about the author. The contents of this section are stored in the file `src/content/about.md`.
+
+For instructions, refer to the [manual](manual.md#about-1).
 
 ### Projects
 
+The *Projects* section contains the "main" functionality of the application. The first section of this component is similar to the *About* section (see above). The author can customize the introductory part by editing the file `src/content/projects.md`.
+
+For instructions, refer to the [manual](manual.md#projects-1).
+
 #### Search bar
+
+The *search bar* allows the user to search from the list of projects. Content that can be searched can be included in either the project description or its topics.
 
 #### The grid
 
+The project *grid* contains details about the projects. The projects are listed in the order the repositories were updated. This way the latest projects are always at the top. All data is fetched from GitHub.
+
+The grid consists of smaller components in the following order:
+
+- Title
+  - the name of the repository the project is hosted in
+  - contains a link to the repository
+- Year
+  - based on the year the repository was created
+- Description
+  - reposition description
+- Language bar
+  - displays the programming languages used in the project
+  - based on the languages listed in the repository
+- Topics
+  - topics or "tags" from the repository.
+
+<!-- more about the language bar ? -->
+
 ### Footer
 
--->
+Always displayed at the bottom of the page. Contains the following details:
+
+- Address
+  - address of the website
+  - *username*.github.io by default
+  - can be customised in the config file
+- Name
+  - full name of the author
+  - optional
+- Year
+  - the current year (2022)
+- Source code
+  - link to the source code
+  - assumed to be `https://github.com/username/username.github.io`
 
 <!--
 
 ## Application state
+
+Write here.
+
+## Services
 
 Write here.
 
