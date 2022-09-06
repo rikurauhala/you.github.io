@@ -16,8 +16,7 @@
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
     "@typescript-eslint/no-unused-vars": [
-      "error",
-      { "argsIgnorePattern": "^_" }
+      "error", { "argsIgnorePattern": "^_" }
     ],
     "arrow-spacing": [
       "error", { "before": true, "after": true }
@@ -26,6 +25,9 @@
     "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "no-case-declarations": "off",
+    "no-restricted-imports": [
+      "error", { "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"] }
+    ],
     "no-trailing-spaces": "error",
     "quotes": ["error", "single"]
   },
