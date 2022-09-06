@@ -175,13 +175,23 @@ Application state is managed with the [useState](https://reactjs.org/docs/hooks-
 
 [Octokit](https://github.com/octokit/octokit.js) is used to make calls to the GitHub [REST API](https://docs.github.com/en/rest). Within the application, all related functionality can be found in the file `src/services/octokit.ts`. The Octokit service is used to set the application state.
 
-<!--
-
 ## Code style
 
-Write here.
+[ESLint](https://eslint.org/) is used to check the code style. The linter is configured with the file `.eslintrc`, located in the root directory of the project.
 
--->
+For development with VS Code the ESLint [plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) is recommended.
+
+### Imports
+
+For Material UI components, default imports should be used.
+
+```ts
+// import like this
+import Delete from '@mui/icons-material/Delete';
+
+// instead of like this
+import { Delete } from '@mui/icons-material';
+```
 
 <!--
 
