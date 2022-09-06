@@ -26,7 +26,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }: Props) => {
     value: string
   }
 
-  const userInput = useRef<Ref>({value: ''});
+  const userInput = useRef<Ref>({ value: '' });
 
   return (
     <Paper component='form' style={style}>

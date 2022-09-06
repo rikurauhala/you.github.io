@@ -6,7 +6,7 @@ const ProjectTopics = ({ topics }: { topics: Array<string> }): JSX.Element => {
   }
 
   return (
-    <Typography variant='body2' component='p' style={{color: '#5e707a'}}>
+    <Typography variant='body2' component='p' style={{ color: '#5e707a' }}>
       {topics
         .filter(topic => topic !== 'portfolio')
         .map(topic =>

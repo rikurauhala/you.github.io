@@ -6,7 +6,7 @@ const ProjectDescription = ({ description }: { description: string }): JSX.Eleme
   }
 
   return (
-    <Typography variant='body2' component='p' style={{color: '#fff'}}>
+    <Typography variant='body2' component='p' style={{ color: '#fff' }}>
       {description}
     </Typography>
   );
