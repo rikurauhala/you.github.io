@@ -29,6 +29,9 @@
       "error", { "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"] }
     ],
     "no-trailing-spaces": "error",
+    "object-curly-spacing": [
+      "error", "always"
+    ],
     "quotes": ["error", "single"]
   },
   "parser": "@typescript-eslint/parser",
