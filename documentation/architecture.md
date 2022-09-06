@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document explains the architecture of the application and works as a manual for contributors.
+This document explains the architecture of the application and works as a manual for contributors in a beginner-friendly way.
 
 The application is a single-page web app written in TypeScript. The application can be deployed to [GitHub pages](https://pages.github.com/) with the npm package [gh-pages](https://github.com/tschaub/gh-pages). Data is fetched from GitHub using [Octokit](https://github.com/octokit/octokit.js) and the [GitHub REST API](https://docs.github.com/en/rest).
 
