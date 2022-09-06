@@ -16,30 +16,47 @@ const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) 
       console.log(error);
     }
   };
+
   void fetchLanguages();
 };
 
 const getRepositories = (setState: (arg0: RepositoryFull[]) => void) => {
+  const repositories = localStorage.getItem('repositories');
+  if (repositories) {
+    setState(JSON.parse(repositories) as RepositoryFull[]);
+    return;
+  }
+
   const fetchRepositories = async () => {
     try {
       const response = await octokit.request(`GET /users/${username}/repos`);
       setState(response.data as Array<RepositoryFull>);
+      localStorage.setItem('repositories', JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
     }
   };
+
   void fetchRepositories();
 };
 
 const getUser = (setState: (arg0: UserFull) => void) => {
+  const gitHubUser = localStorage.getItem('gitHubUser');
+  if (gitHubUser) {
+    setState(JSON.parse(gitHubUser) as UserFull);
+    return;
+  }
+
   const fetchUser = async () => {
     try {
       const response = await octokit.request(`GET /users/${username}`);
       setState(response.data as UserFull);
+      localStorage.setItem('gitHubUser', JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
     }
   };
+
   void fetchUser();
 };
 
