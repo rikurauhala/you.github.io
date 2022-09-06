@@ -7,11 +7,18 @@ import { RepositoryFull, UserFull } from '../types/types';
 const octokit = new Octokit();
 
 const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) => {
+  const languages = localStorage.getItem(`languages${languagesUrl}`);
+  if (languages) {
+    setState(JSON.parse(languages) as string[]);
+    return;
+  }
+
   const fetchLanguages = async () => {
     try {
       const octokit = new Octokit();
       const response = await octokit.request(`GET ${languagesUrl}`);
       setState(response.data as Array<string>);
+      localStorage.setItem(`languages${languagesUrl}`, JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
     }
