@@ -159,11 +159,11 @@ Always displayed at the bottom of the page. Contains the following details:
   - link to the source code
   - assumed to be `https://github.com/username/username.github.io`
 
-<!--
-
 ## Application state
 
-Write here.
+Application state is managed with the [useState](https://reactjs.org/docs/hooks-state.html) hook.
+
+<!--
 
 ## Services
 
