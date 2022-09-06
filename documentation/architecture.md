@@ -1,5 +1,13 @@
 # Architecture
 
+<!--
+
+## Overview
+
+Write here.
+
+-->
+
 ## Structure
 
 Here is a short overview of the project structure. For instructions, see [manual](manual.md).
@@ -163,13 +171,21 @@ Always displayed at the bottom of the page. Contains the following details:
 
 Application state is managed with the [useState](https://reactjs.org/docs/hooks-state.html) hook.
 
+## Services
+
+[Octokit](https://github.com/octokit/octokit.js) is used to make calls to the GitHub [REST API](https://docs.github.com/en/rest). Within the application, all related functionality can be found in the file `src/services/octokit.ts`. The Octokit service is used to set the application state.
+
 <!--
 
-## Services
+## Code style
 
 Write here.
 
-## Code style
+-->
+
+<!--
+
+## Functionality
 
 Write here.
 
