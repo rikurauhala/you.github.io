@@ -10,6 +10,10 @@ The application is a single-page web app written in TypeScript. The application 
 
 Here is a short overview of the project structure. For instructions, see [manual](manual.md).
 
+### build
+
+Not committed to the repository. Contains the contents of the public folder and the compiled JavaScript code.
+
 ### documentation
 
 As the name would suggest, project documentation is located here. This document, architecture.md provides insight into how the application works. The file manual.md contains the user manual and instructions for setting up and configuring the application.
