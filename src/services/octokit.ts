@@ -7,7 +7,7 @@ import { RepositoryFull, UserFull } from '../types/types';
 const octokit = new Octokit();
 
 const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) => {
-  const languages = localStorage.getItem(`languages${languagesUrl}`);
+  const languages = sessionStorage.getItem(`languages${languagesUrl}`);
   if (languages) {
     setState(JSON.parse(languages) as string[]);
     return;
@@ -18,7 +18,7 @@ const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) 
       const octokit = new Octokit();
       const response = await octokit.request(`GET ${languagesUrl}`);
       setState(response.data as Array<string>);
-      localStorage.setItem(`languages${languagesUrl}`, JSON.stringify(response.data));
+      sessionStorage.setItem(`languages${languagesUrl}`, JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +28,7 @@ const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) 
 };
 
 const getRepositories = (setState: (arg0: RepositoryFull[]) => void) => {
-  const repositories = localStorage.getItem('repositories');
+  const repositories = sessionStorage.getItem('repositories');
   if (repositories) {
     setState(JSON.parse(repositories) as RepositoryFull[]);
     return;
@@ -38,7 +38,7 @@ const getRepositories = (setState: (arg0: RepositoryFull[]) => void) => {
     try {
       const response = await octokit.request(`GET /users/${username}/repos`);
       setState(response.data as Array<RepositoryFull>);
-      localStorage.setItem('repositories', JSON.stringify(response.data));
+      sessionStorage.setItem('repositories', JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
     }
@@ -48,7 +48,7 @@ const getRepositories = (setState: (arg0: RepositoryFull[]) => void) => {
 };
 
 const getUser = (setState: (arg0: UserFull) => void) => {
-  const gitHubUser = localStorage.getItem('gitHubUser');
+  const gitHubUser = sessionStorage.getItem('gitHubUser');
   if (gitHubUser) {
     setState(JSON.parse(gitHubUser) as UserFull);
     return;
@@ -58,7 +58,7 @@ const getUser = (setState: (arg0: UserFull) => void) => {
     try {
       const response = await octokit.request(`GET /users/${username}`);
       setState(response.data as UserFull);
-      localStorage.setItem('gitHubUser', JSON.stringify(response.data));
+      sessionStorage.setItem('gitHubUser', JSON.stringify(response.data));
     } catch (error) {
       console.log(error);
     }
