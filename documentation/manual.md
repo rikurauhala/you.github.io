@@ -85,6 +85,8 @@ The application has two diffent configurable sections for user content. Content 
 
 The first one is the *About* section. This is where you can write anything about yourself you wish to tell the people visiting your portfolio. Remember that this is intended to be your professional site so you may want to write about your education, career or professional interests. You may also provide instructions on how to contact you, for example via email or on LinkedIn.
 
+As the content is written in Markdown, it is possible to divide it into smaller sections and use different levels of [headings](https://www.markdownguide.org/basic-syntax/#headings).
+
 Contents of the *About* section can be written by editing the file **src/content/about.md**.
 
 ##### Projects
