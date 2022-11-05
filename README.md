@@ -47,6 +47,10 @@ $ npm run deploy -- -m "Deploy"
 - [Architecture](documentation/architecture.md)
 - [User manual](documentation/manual.md)
 
+## License
+
+[MIT](https://github.com/rikurauhala/rikurauhala.github.io/blob/main/LICENSE)
+
 ## Credits
 
 - UI elements and icons by [Material UI](https://mui.com/)  
