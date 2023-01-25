@@ -11,8 +11,6 @@ import PersonIcon from '@mui/icons-material/Person';
 
 import { name, url, username } from '../../config';
 
-import './Footer.css';
-
 export interface FooterButtonProps {
   icon: ReactElement
   text: string
