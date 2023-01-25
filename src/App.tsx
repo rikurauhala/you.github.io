@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet';
 
+import { CssBaseline, ThemeProvider } from '@mui/material';
+
 import Container from '@mui/material/Container';
 
 import Info from './components/Info';
@@ -9,6 +11,8 @@ import Footer from './components/Footer';
 
 import { name } from './config';
 
+import { theme } from './themes';
+
 import './App.css';
 
 const App = (): JSX.Element => {
@@ -16,7 +20,8 @@ const App = (): JSX.Element => {
   const letter = /[a-z]/.test(first) ? first : '-';
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Helmet>
         <title>{name}</title>
         <meta content={`Personal home page of ${name}`} name="description" />
@@ -28,7 +33,7 @@ const App = (): JSX.Element => {
         <Projects />
         <Footer />
       </Container>
-    </>
+    </ThemeProvider>
   );
 };
 
