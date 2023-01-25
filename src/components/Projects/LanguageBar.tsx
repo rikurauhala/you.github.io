@@ -36,10 +36,10 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
 
   if (noLanguages) {
     return (
-      <div className='languageBar'>
-        <Tooltip arrow enterTouchDelay={0} title='No languages!'>
+      <div className="languageBar">
+        <Tooltip arrow enterTouchDelay={0} title="No languages!">
           <div
-            className='language'
+            className="language"
             style={{
               backgroundColor: '#0f3552',
               width: '100%'
@@ -51,14 +51,14 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
   }
 
   return (
-    <div className='languageBar'>
+    <div className="languageBar">
       {
         Object
           .entries(barLength)
           .map(([key, value]) =>
             <Tooltip arrow enterTouchDelay={0} key={key} title={value[0]}>
               <div
-                className='language'
+                className="language"
                 style={{
                   backgroundColor: colors[value[0] as keyof typeof colors],
                   width: value[1]

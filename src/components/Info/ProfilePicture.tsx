@@ -13,17 +13,17 @@ const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
     return (
       <Skeleton
         style={style}
-        variant='circular'
+        variant="circular"
       />
     );
   }
 
   return (
     <img
-      alt='Profile picture'
-      className='picture'
+      alt="Profile picture"
+      className="picture"
       src={url}
-      title='This is me!'
+      title="This is me!"
     />
   );
 };

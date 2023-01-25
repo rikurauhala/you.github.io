@@ -19,10 +19,10 @@ const App = (): JSX.Element => {
     <>
       <Helmet>
         <title>{name}</title>
-        <meta name="description" content={`Personal home page of ${name}`} />
-        <link rel="icon" href={`favicon/${letter}.ico`} />
+        <meta content={`Personal home page of ${name}`} name="description" />
+        <link href={`favicon/${letter}.ico`} rel="icon" />
       </Helmet>
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <Info />
         <About />
         <Projects />

@@ -12,10 +12,10 @@ import ProjectDescription from './ProjectDescription';
 import ProjectTopics from './ProjectTopics';
 
 const Project = ({ repository }: { repository: Repository }): JSX.Element => (
-  <Grid item xs={12} md={6} lg={4} style={{ display: 'flex' }}>
+  <Grid item lg={4} md={6} style={{ display: 'flex' }} xs={12}>
     <Card style={{ backgroundColor: '#051222', width: '100%', border: '#0f3552 1px solid' }}>
       <CardContent>
-        <ProjectName url={repository.html_url} name={repository.name} />
+        <ProjectName name={repository.name} url={repository.html_url} />
         <ProjectYear year={repository.year} />
         <ProjectDescription description={repository.description} />
         <LanguageBar languagesUrl={repository.languages_url} />

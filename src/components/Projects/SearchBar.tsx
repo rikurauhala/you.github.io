@@ -29,21 +29,22 @@ const SearchBar = ({ searchQuery, setSearchQuery }: Props) => {
   const userInput = useRef<Ref>({ value: '' });
 
   return (
-    <Paper component='form' style={style}>
+    <Paper component="form" style={style}>
       <InputBase
         inputRef={userInput}
         onChange={event => setSearchQuery(event.target.value)}
         onKeyPress={event => event.key === 'Enter' && event.preventDefault()}
-        placeholder='Search'
+        placeholder="Search"
         sx={{ color: '#fff', flex: 1, ml: 1 }}
       />
       { searchQuery.length > 0 &&
         <IconButton
-          color="primary" sx={{ p: '10px' }}
+          color="primary"
           onClick={() => {
             userInput.current.value = '';
             setSearchQuery('');
           }}
+          sx={{ p: '10px' }}
         >
           <ClearIcon />
         </IconButton>

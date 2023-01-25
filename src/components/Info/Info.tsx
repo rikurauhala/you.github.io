@@ -25,14 +25,14 @@ const Info = (): JSX.Element => {
   }, []);
 
   return (
-    <div className='info'>
+    <div className="info">
       <ProfilePicture url={user.avatar_url} />
       <Name name={user.name} />
       <Bio bio={user.bio} />
       <Details
         company={user.company}
-        location={user.location}
         github={user.login}
+        location={user.location}
         twitter={user.twitter_username}
       />
     </div>

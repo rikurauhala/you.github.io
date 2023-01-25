@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import { username } from '../../config';
 
 const Name = ({ name }: { name: string }): JSX.Element => (
-  <Typography variant='h4' component='h1'>
+  <Typography component="h1" variant="h4">
     {name ? name : username}
   </Typography>
 );
