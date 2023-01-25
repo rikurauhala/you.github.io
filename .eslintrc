@@ -2,7 +2,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended"
   ],
   "plugins": ["@typescript-eslint"],
   "env": {
@@ -15,24 +16,20 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/restrict-plus-operands": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "error", { "argsIgnorePattern": "^_" }
-    ],
-    "arrow-spacing": [
-      "error", { "before": true, "after": true }
-    ],
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "arrow-spacing": ["error", { "before": true, "after": true }],
     "eqeqeq": "error",
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "jsx-quotes": ["error", "prefer-double"],
     "linebreak-style": ["error", "unix"],
+    "max-len": ["error", { "code": 100, "tabWidth": 2 }],
     "no-case-declarations": "off",
-    "no-restricted-imports": [
-      "error", { "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"] }
-    ],
+    "no-multi-spaces": "error",
     "no-trailing-spaces": "error",
-    "object-curly-spacing": [
-      "error", "always"
-    ],
-    "quotes": ["error", "single"]
+    "no-useless-escape": "off",
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "react/jsx-sort-props": ["error", { "ignoreCase": true }],
+    "react/react-in-jsx-scope": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
