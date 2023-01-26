@@ -20,7 +20,7 @@ const Footer = () => (
       <FooterButton
         icon={<PersonIcon />}
         text={name}
-        url=""
+        url={`https://github.com/${username}`}
       />
       <FooterButton
         icon={<CalendarMonthIcon />}
