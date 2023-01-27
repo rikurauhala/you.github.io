@@ -45,11 +45,8 @@ $ npm run deploy -- -m "Deploy"
 ## Documentation
 
 - [Architecture](documentation/architecture.md)
+- [License](LICENSE)
 - [User manual](documentation/manual.md)
-
-## License
-
-[MIT](https://github.com/rikurauhala/rikurauhala.github.io/blob/main/LICENSE)
 
 ## Credits
 
