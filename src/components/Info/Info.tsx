@@ -13,8 +13,6 @@ import Name from './Name';
 import Bio from './Bio';
 import Details from './Details';
 
-import './Info.css';
-
 const Info = (): JSX.Element => {
   const [user, setUser] = useState<UserFull>(initialUserFull);
 

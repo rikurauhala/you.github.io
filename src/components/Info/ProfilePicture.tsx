@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
 
 const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
@@ -19,10 +20,16 @@ const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
   }
 
   return (
-    <img
+    <Box
       alt="Profile picture"
-      className="picture"
+      component="img"
       src={url}
+      sx={{
+        borderRadius: '50%',
+        height: '200px',
+        margin: '2rem 0',
+        width: '200px',
+      }}
       title="This is me!"
     />
   );
