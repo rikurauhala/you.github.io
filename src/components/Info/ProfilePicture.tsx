@@ -2,18 +2,27 @@ import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
 
 const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
-  const style = {
+  const size = '200px';
+
+  const styleSkeleton = {
     backgroundColor: '#5e707a',
     color: '#5e707a',
-    height: '200px',
+    height: size,
     margin: '2rem auto',
-    width: '200px'
+    width: size,
+  };
+
+  const styleProfilePicture = {
+    borderRadius: '50%',
+    height: size,
+    margin: '2rem 0',
+    width: size,
   };
 
   if (url === 'avatar_url') {
     return (
       <Skeleton
-        style={style}
+        style={styleSkeleton}
         variant="circular"
       />
     );
@@ -24,12 +33,7 @@ const ProfilePicture = ({ url }: { url: string }): JSX.Element => {
       alt="Profile picture"
       component="img"
       src={url}
-      sx={{
-        borderRadius: '50%',
-        height: '200px',
-        margin: '2rem 0',
-        width: '200px',
-      }}
+      sx={styleProfilePicture}
       title="This is me!"
     />
   );
