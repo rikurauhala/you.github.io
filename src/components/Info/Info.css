@@ -1,15 +1,6 @@
-.info {
-  text-align: center;
-}
-
 .picture {
   border-radius: 50%;
   height: 200px;
   margin: 2rem 0;
   width: 200px;
-}
-
-.bio {
-  color: #8bb4f7;
-  margin: 0.5rem;
 }

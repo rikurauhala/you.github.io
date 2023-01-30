@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import Box from '@mui/material/Box';
+
 import octokitService from '../../services/octokit';
 
 import { UserFull } from '../../types/types';
@@ -25,7 +27,7 @@ const Info = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="info">
+    <Box sx={{ textAlign: 'center' }}>
       <ProfilePicture url={user.avatar_url} />
       <Name name={user.name} />
       <Bio bio={user.bio} />
@@ -35,7 +37,7 @@ const Info = (): JSX.Element => {
         location={user.location}
         twitter={user.twitter_username}
       />
-    </div>
+    </Box>
   );
 };
 
