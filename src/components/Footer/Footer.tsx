@@ -1,11 +1,11 @@
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import InfoIcon from '@mui/icons-material/Info';
 import PersonIcon from '@mui/icons-material/Person';
 
-import { name, username } from '../../config';
+import { name, username, version } from '../../config';
 
 import FooterButton from './FooterButton';
 
@@ -23,14 +23,14 @@ const Footer = () => (
         url={`https://github.com/${username}`}
       />
       <FooterButton
-        icon={<CalendarMonthIcon />}
-        text="2022-2023"
-        url=""
-      />
-      <FooterButton
         icon={<GitHubIcon />}
         text="Source code"
         url={`https://github.com/${username}/${username}.github.io`}
+      />
+      <FooterButton
+        icon={<InfoIcon />}
+        text={`Version ${version}`}
+        url=""
       />
     </Grid>
   </Container>
