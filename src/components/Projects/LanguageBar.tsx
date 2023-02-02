@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 
 import octokitService from '../../services/octokit';
 
 import colors from '../../utils/colors';
-
-import './LanguageBar.css';
 
 const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
   const [languages, setLanguages] = useState<Array<string>>([]);
@@ -36,38 +35,40 @@ const LanguageBar = ({ languagesUrl }: {languagesUrl: string}): JSX.Element => {
 
   if (noLanguages) {
     return (
-      <div className="languageBar">
+      <Box marginTop="15px">
         <Tooltip arrow enterTouchDelay={0} title="No languages!">
           <div
-            className="language"
             style={{
               backgroundColor: '#0f3552',
+              display: 'inline-block',
+              height: '7px',
               width: '100%'
             }}
           />
         </Tooltip>
-      </div>
+      </Box>
     );
   }
 
   return (
-    <div className="languageBar">
+    <Box marginTop="15px">
       {
         Object
           .entries(barLength)
           .map(([key, value]) =>
             <Tooltip arrow enterTouchDelay={0} key={key} title={value[0]}>
               <div
-                className="language"
                 style={{
                   backgroundColor: colors[value[0] as keyof typeof colors],
+                  display: 'inline-block',
+                  height: '7px',
                   width: value[1]
                 }}
               />
             </Tooltip>
           )
       }
-    </div>
+    </Box>
   );
 };
 
