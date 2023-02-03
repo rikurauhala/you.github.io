@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.90cc48c1.css","mappings":"AAAA,EACE,kBACF,CAEA,iBACE,aAAc,CACd,oBACF,CAEA,QACE,aAAc,CACd,yBACF","sources":["App.css"],"sourcesContent":["a {\n  white-space: nowrap;\n}\n\na:link, a:visited {\n  color: #8bb4f7;\n  text-decoration: none;\n}\n\na:hover {\n  color: #8bb4f7;\n  text-decoration: underline;\n}\n"],"names":[],"sourceRoot":""}
