@@ -15,9 +15,8 @@ The source code of my personal professional website is hosted here.
 
 - Data is fetched from my GitHub profile using [![Octokit](https://img.shields.io/badge/Octokit-17.37.0-0366D6.svg?logo=GitHub&style=flat-square)](https://github.com/octokit/octokit.js) and the [![GitHub REST API](https://img.shields.io/badge/GitHub%20REST%20API-v3-0366D6.svg?logo=GitHub&style=flat-square)](https://docs.github.com/en/rest)
 
-<br>
-
->NOTE : I am working on making an easily configurable version so anyone can easily display their favourite projects!
+> **Note**  
+> I am working on making an easily configurable version so anyone can easily display their favourite projects!
 
 ## Instructions
 
