@@ -1,8 +1,22 @@
 ## About
 
-The source code of my personal professional website is hosted here. Created with [create-react-app](https://create-react-app.dev/docs/adding-typescript/) and written in [TypeScript](https://www.typescriptlang.org/). Deployed to [GitHub pages](https://pages.github.com/) with the npm package [gh-pages](https://github.com/tschaub/gh-pages). Data is fetched from my GitHub profile using [Octokit](https://github.com/octokit/octokit.js) and the [GitHub REST API](https://docs.github.com/en/rest).
+The source code of my personal professional website is hosted here.
 
-I am working on making an easily configurable version so anyone can easily display their favourite projects!
+## Tools and Libraries
+
+- [![Created with create-react-app](https://img.shields.io/badge/Created%20with-create--react--app-61DAFB.svg?logo=React&style=flat-square)](https://create-react-app.dev/docs/adding-typescript/)
+- [![TypeScript](https://img.shields.io/badge/TypeScript-4.0.3-007ACC.svg?logo=TypeScript&style=flat-square)](https://www.typescriptlang.org/)
+
+## Deployment
+
+- Deployed to [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-N/A-181717.svg?logo=GitHub&style=flat-square)](https://pages.github.com/) with the npm package [![gh-pages](https://img.shields.io/badge/gh--pages-3.1.0-181717.svg?logo=npm&style=flat-square)](https://github.com/tschaub/gh-pages)
+
+## Data Source
+
+- Data is fetched from my GitHub profile using [![Octokit](https://img.shields.io/badge/Octokit-17.37.0-0366D6.svg?logo=GitHub&style=flat-square)](https://github.com/octokit/octokit.js) and the [![GitHub REST API](https://img.shields.io/badge/GitHub%20REST%20API-v3-0366D6.svg?logo=GitHub&style=flat-square)](https://docs.github.com/en/rest)
+
+> **Note**  
+> I am working on making an easily configurable version so anyone can easily display their favourite projects!
 
 ## Instructions
 
@@ -56,3 +70,10 @@ $ npm run deploy -- -m "Deploy"
 - Profile picture by [Solana Kim](https://github.com/Solanakim)
 - Shoutout to [Full stack open](https://fullstackopen.com/en/) for teaching me everything needed for this project
 - Shoutout to [gitname](https://github.com/gitname) for providing [this](https://github.com/gitname/react-gh-pages#readme) great tutorial for getting started
+
+## License
+
+This project is licensed under the terms of the [MIT license](https://opensource.org/licenses/MIT).
+
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
