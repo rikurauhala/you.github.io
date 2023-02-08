@@ -12,10 +12,10 @@ Instructions assume that you are using a Linux-based operating system and have V
 
 ```bash
 # Get the source code
-$ git clone git@github.com:rikurauhala/rikurauhala.github.io.git
+$ git clone git@github.com:rikurauhala/you.github.io.git
 
 # Change directory
-$ cd rikurauhala.github.io
+$ cd you.github.io
 
 # Install dependencies
 $ npm install
