@@ -32,4 +32,5 @@ This project offers a quick and easy way for developers to set up and deploy a p
 - [Contributing](.github/CONTRIBUTING.md)
 - [Credits](docs/credits.md)
 - [License](LICENSE)
+- [Security Policy](.github/SECURITY.md)
 - [User manual](docs/manual.md)
