@@ -23,7 +23,13 @@ Show your work!
 
 ## About
 
-This project offers a quick and easy way for developers to set up and deploy a portfolio website to showcase their work. It uses the GitHub API to automatically fetch up-to-date information from your profile! Simply plug in your GitHub username, write a short bio about yourself and describe your work briefly. Then you can focus on what is important: your work here on GitHub. Please refer to the documentation for more information. See a live example at [rauhala.io](https://rauhala.io).
+This project offers a quick and easy way for developers to set up and deploy a portfolio website to showcase their work. It uses the GitHub API to automatically fetch up-to-date information from your profile! Simply plug in your GitHub username, write a short bio about yourself and describe your work briefly. Then you can focus on what is important: your work here on GitHub. Please refer to the documentation for more information.
+
+## Demo
+
+Here is what the application looks like with the profile of the [Octocat](https://github.com/octocat). See [rauhala.io](https://rauhala.io) for a real world example.
+
+![Demo with the Octocat](docs/img/octocat.png)
 
 ## Documentation
 
