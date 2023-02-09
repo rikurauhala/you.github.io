@@ -202,11 +202,3 @@ import Delete from '@mui/icons-material/Delete';
 // instead of like this
 import { Delete } from '@mui/icons-material';
 ```
-
-<!--
-
-## Functionality
-
-Write here.
-
--->

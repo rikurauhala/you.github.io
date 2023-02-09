@@ -16,53 +16,57 @@ STEP="\033[0;36m"
 NC="\033[0m"
 PREFIX="${NOTICE}[!]${NC} "
 QUESTION="${NOTICE}[?]${NC} "
+STEPS=11
 
 function print_link {
     printf "${PREFIX}${LINK}$1\n"
 }
 
 function print_question {
-    printf "${QUESTION}${STEP}($1 / 10)${NC} $2"
+    printf "${QUESTION}${STEP}($1 / ${STEPS})${NC} $2 "
 }
 
 function print_other {
     printf "${PREFIX}$1\n"
 }
 
-function print_status {
+function print_progress {
     printf "${PREFIX}${STEP}($1 / 10)${NC} $2\n"
 }
 
-print_status 1 "Downloading the source code..."
-git clone $SOURCE
-print_status 2 "Source code downloaded"
-
-cd you.github.io
-
-print_status 3 "Installing dependencies..."
-npm install
-print_status 4 "Dependencies installed"
-
-touch .env
-
-print_question 5 "What is your username on GitHub? Type here: "
+print_other "Welcome to the {you}.github.io installation script! Let's begin."
+print_question 1 "What is your username on GitHub? Type here:"
 read username
 while true; do
     if [[ ! -z $username ]]; then
-        echo REACT_APP_USERNAME=$username >> .env
         break
     else
-        print_question "Username cannot be empty! Type here: "
+        print_question "Username cannot be empty! Type here:"
         read username
     fi
 done
-print_question 6 "What is your real name? Enter to skip: "
+
+print_progress 2 "Downloading the source code..."
+git clone $SOURCE
+print_progress 3 "Source code downloaded"
+
+mv you.github.io $username.github.io
+cd $username.github.io
+
+print_progress 4 "Installing dependencies..."
+npm install
+print_progress 5 "Dependencies installed"
+
+touch .env
+
+echo REACT_APP_USERNAME=$username >> .env
+print_question 6 "What is your real name? Enter to skip:"
 read name
 echo REACT_APP_NAME=$name >> .env
-print_question 7 "Set up a keyword to filter repositories. Enter to skip: "
+print_question 7 "Set up a keyword to filter repositories. Enter to skip:"
 read keyword
 echo REACT_APP_KEYWORD=$keyword >> .env
-print_question 8 "Do you have a custom url for the application? Enter to skip: "
+print_question 8 "Do you have a custom url for the application? Enter to skip:"
 read url
 if [[ ! -z $url ]]; then
     echo REACT_APP_URL=$url >> .env
@@ -73,7 +77,7 @@ else
     echo REACT_APP_URL="" >> .env
 fi
 
-print_question 9 "Write something about yourself. Enter to skip: "
+print_question 9 "Write something about yourself. Enter to skip:"
 read about
 if [[ ! -z $about ]]; then
     about_file="src/content/about.md"
@@ -86,7 +90,7 @@ else
     print_other "You can always edit the file src/content/about.md later!"
 fi
 
-print_question 10 "Write something about your projects. Enter to skip: "
+print_question 10 "Write something about your projects. Enter to skip:"
 read projects
 if [[ ! -z $projects ]]; then
     projects_file="src/content/projects.md"
@@ -97,4 +101,10 @@ if [[ ! -z $projects ]]; then
     echo $about >> $projects_file
 else
     print_other "You can always edit the file src/content/projects.md later!"
+fi
+
+print_question 11 "All done! Do you want to launch the application now? (y):"
+read answer
+if [[ "$answer" = "y" ]]; then
+    npm start
 fi
