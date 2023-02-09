@@ -28,6 +28,7 @@ This project offers a quick and easy way for developers to set up and deploy a p
 ## Documentation
 
 - [Architecture](docs/architecture.md)
+- [Code of Conduct](.github/CODE_OF_CONDUCT.md)
 - [Contributing](.github/CONTRIBUTING.md)
 - [Credits](docs/credits.md)
 - [License](LICENSE)
