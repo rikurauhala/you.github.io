@@ -2,25 +2,32 @@
 
 ## Overview
 
-This document explains the architecture of the application and works as a manual for contributors in a beginner-friendly way.
+This document provides an overview of the software architecture of the application and works as a manual for contributors.
 
-The application is a single-page web app written in TypeScript. The application can be deployed to [GitHub pages](https://pages.github.com/) with the npm package [gh-pages](https://github.com/tschaub/gh-pages). Data is fetched from GitHub using [Octokit](https://github.com/octokit/octokit.js) and the [GitHub REST API](https://docs.github.com/en/rest).
+The application is a single-page React app written in TypeScript. The application can be deployed to [GitHub pages](https://pages.github.com/) with the npm package [gh-pages](https://github.com/tschaub/gh-pages). Data is fetched from GitHub using [Octokit](https://github.com/octokit/octokit.js) and the [GitHub REST API](https://docs.github.com/en/rest).
+
+For instructions on how to set up and deploy your own version, see the [user manual](manual.md).
 
 ## Structure
 
-Here is a short overview of the project structure. For instructions, see [manual](manual.md).
+Here is a short overview of the project structure, directory by directory.
+
+### .github
+
+Contains GitHub related files: the GitHub Actions CI/CD workflow defined in [main.yml](../.github/workflows/main.yml) and other files related to the repository hosted on GitHub.
 
 ### build
 
 Not committed to the repository. Contains the contents of the public folder and the compiled JavaScript code.
 
-### documentation
+### docs
 
 As the name would suggest, project documentation is located here. This document, architecture.md provides insight into how the application works. The file manual.md contains the user manual and instructions for setting up and configuring the application.
 
 ```
-├── documentation
+├── docs
 │   ├── architecture.md
+│   ├── credits.md
 │   └── manual.md
 ```
 
@@ -84,7 +91,10 @@ The main component is called *App.tsx*.
 ├── .env
 ├── .env.default
 ├── .eslintrc
+├── .gitattributes
 ├── .gitignore
+├── install.sh
+├── LICENSE
 ├── package.json
 ├── package-lock.json
 ├── README.md
@@ -143,31 +153,25 @@ The grid consists of smaller components in the following order:
 - Year
   - based on the year the repository was created
 - Description
-  - reposition description
+  - repository description
 - Language bar
   - displays the programming languages used in the project
   - based on the languages listed in the repository
 - Topics
   - topics or "tags" from the repository.
 
-<!-- more about the language bar ? -->
-
 ### Footer
 
 Always displayed at the bottom of the page. Contains the following details:
 
-- Address
-  - address of the website
-  - *username*.github.io by default
-  - can be customised in the config file
 - Name
   - full name of the author
   - optional
-- Year
-  - the current year (2022)
 - Source code
   - link to the source code
-  - assumed to be `https://github.com/username/username.github.io`
+  - should not be modified so any interested developers can find the original repository
+- Version
+  - current version of the application
 
 ## Application state
 
