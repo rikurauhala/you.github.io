@@ -22,7 +22,7 @@ function print_link {
 }
 
 function print_question {
-    printf "${PREFIX}${STEP}($1 / 10)${NC} $2"
+    printf "${QUESTION}${STEP}($1 / 10)${NC} $2"
 }
 
 function print_other {
