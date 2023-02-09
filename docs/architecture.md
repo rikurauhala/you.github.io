@@ -105,6 +105,10 @@ The main component is called *App.tsx*.
 
 The program is a single-page web application. Users can access it via their web browser on various devices. Requests to all but the root address will lead to a "404 not found" page. The main application page consists of smaller parts.
 
+![Demo with the Octocat](img/octocat.png)
+
+Here is what the user interface looks like.
+
 ### Info
 
 The *info* section consists of four smaller components. All data in this section is fetched from the GitHub API.
