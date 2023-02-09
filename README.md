@@ -27,7 +27,7 @@ This project offers a quick and easy way for developers to set up and deploy a p
 
 ## Documentation
 
-- [Architecture](documentation/architecture.md)
-- [Credits](documentation/credits.md)
+- [Architecture](docs/architecture.md)
+- [Credits](docs/credits.md)
 - [License](LICENSE)
-- [User manual](documentation/manual.md)
+- [User manual](docs/manual.md)
