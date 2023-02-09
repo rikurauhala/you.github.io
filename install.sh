@@ -12,7 +12,7 @@
 SOURCE="https://github.com/rikurauhala/you.github.io"
 NOTICE="\033[0;33m"
 LINK="\033[1;34m"
-STEP="\033[0;30m"
+STEP="\033[0;36m"
 NC="\033[0m"
 PREFIX="${NOTICE}[!]${NC} "
 QUESTION="${NOTICE}[?]${NC} "
