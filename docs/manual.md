@@ -2,13 +2,11 @@
 
 ## About
 
-This project is a **professional portfolio website** for developers who host their source code on [GitHub](https://github.com/). This application offers an alternative to the tedious task of creating your own portfolio website.
+This project is a **professional portfolio website** for developers who host their source code on [GitHub](https://github.com/). This application offers an alternative to the tedious task of creating your own portfolio website. You may also use this as a temporary portfolio site while working on your own version!
 
 The application code is written in [TypeScript](https://www.typescriptlang.org/). However, no knowledge of JavaScript or TypeScript is required to set up the project for your own needs. Just some light configuration is needed to get started. Anyone is free to fork or clone this project and create their own version. This manual contains instructions for doing so.
 
-## Getting started
-
-### How to install
+## How to install
 
 Start by getting the source code. Use one of the following ways to clone the repository from the command line. Alternatively, you may download the source code as a [zip package](https://github.com/rikurauhala/you.github.io/archive/refs/heads/main.zip).
 
@@ -36,9 +34,9 @@ $ cd you.github.io
 $ npm install
 ```
 
-### How to configure
+## How to configure
 
-#### Configuration file
+### Configuration file
 
 The application requires some configuration. Start by renaming or copying the file `.env.default` into a new file called `.env`. Open the file in your favourite editor and replace the values with your own. It's okay to commit the .env file if you want, as it contains no secrets.
 
@@ -69,7 +67,7 @@ REACT_APP_KEYWORD='portfolio'
 REACT_APP_URL='www.example.com'
 ```
 
-#### Projects
+### Projects
 
 The benefit of using this application as your portfolio (instead of just using your GitHub profile) is the ability to choose which projects you want to display. To choose the projects to be displayed, start by specifying a *keyword* in the configuration file. By default, the keyword is "portfolio". You can change the keyword if you wish.
 
@@ -77,11 +75,11 @@ Next, take a look at your public repositories on your GitHub profile. Mark the r
 
 In the projects section the projects are listed by update date, latest first. This way your latest and most active projects will always be at the top of the list.
 
-#### Content
+### Content
 
 The application has two diffent configurable sections for user content. Content is written using [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-##### About
+#### About
 
 The first one is the *About* section. This is where you can write anything about yourself you wish to tell the people visiting your portfolio. Remember that this is intended to be your professional site so you may want to write about your education, career or professional interests. You may also provide instructions on how to contact you, for example via email or on LinkedIn.
 
@@ -89,21 +87,25 @@ As the content is written in Markdown, it is possible to divide it into smaller 
 
 Contents of the *About* section can be written by editing the file **src/content/about.md**.
 
-##### Projects
+#### Projects
 
 The second configurable section is the *Projects* section. Your project details are automatically fetched from GitHub, but you may want to provide some additional details here.
 
 Contents of the *Projects* section can be written by editing the file **src/content/projects.md**.
 
-##### Custom
+#### Custom
 
 Adding custom sections should be straightforward. Create a new component in the **src/components** directory and write the contents in a new markdown (.md) file in the **src/content** directory. For example, you may want to consider creating a custom section for your professional social media accounts.
 
-#### Custom domain
+### Custom domain
 
 If you deploy the application to GitHub Pages, it is possible to use a custom domain. In the **public** directory, create a file called `CNAME`. In the file, write your custom domain name such as www.example.com. Refer to the official GitHub Pages [documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages) for more detailed instructions.
 
-### How to run
+### Theme
+
+You can customize the colors by editing the [theme file](../src/themes//index.ts). Refer to the Material UI [documentation](https://mui.com/material-ui/customization/theming) for more advanced theming options.
+
+## How to run
 
 Start the application from the command line after installing the dependencies and configuring the application to use your username and other details. For production, I would recommend deploying the app to GitHub Pages. See instructions below.
 
@@ -112,13 +114,16 @@ Start the application from the command line after installing the dependencies an
 $ npm start
 ```
 
-### How to deploy
+## How to deploy
 
 After making sure the application works as intended and it displays the data you want, you can deploy it to [GitHub Pages](https://pages.github.com/). It is recommended to host the source code in a repository named `username.github.io`. To use a custom domain, see instructions above.
 
 ```bash
 # Deploy the application to GitHub pages
-$ npm run deploy -- -m "Deploy"
+$ npm run deploy
+
+# Deploy with a custom commit message
+$ npm run deploy -- -m "Message here"
 ```
 
 ## Resources
