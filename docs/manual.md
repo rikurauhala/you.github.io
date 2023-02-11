@@ -10,6 +10,14 @@ The application code is written in [TypeScript](https://www.typescriptlang.org/)
 
 Start by getting the source code. Use one of the following ways to clone the repository from the command line. Alternatively, you may download the source code as a [zip package](https://github.com/rikurauhala/you.github.io/archive/refs/heads/main.zip).
 
+**Prerequisites**:
+
+You should have the following software or packages installed. It is also recommended to use Linux as everything has been tested only on a Linux distro. To use other operating systems, you may have to do some research of your own.
+
+- `git: ^2.25.1`
+- `node: ^v18.7.0`
+- `npm: ^8.15.0`
+
 ```bash
 # Get the source code via the command line
 # Choose the way you are most familiar with
