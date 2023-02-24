@@ -27,6 +27,7 @@ Here is what the application looks like with the profile of the [Octocat](https:
 ## Documentation
 
 - [Architecture](docs/architecture.md)
+- [Changelog](docs/changelog.md)
 - [Code of Conduct](.github/CODE_OF_CONDUCT.md)
 - [Contributing](.github/CONTRIBUTING.md)
 - [Credits](docs/credits.md)
