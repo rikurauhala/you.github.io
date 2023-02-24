@@ -31,6 +31,6 @@ Here is what the application looks like with the profile of the [Octocat](https:
 - [Code of Conduct](.github/CODE_OF_CONDUCT.md)
 - [Contributing](.github/CONTRIBUTING.md)
 - [Credits](docs/credits.md)
-- [License](LICENSE)
+- [License](LICENSE.md)
 - [Security Policy](.github/SECURITY.md)
 - [User manual](docs/manual.md)
