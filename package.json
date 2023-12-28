@@ -33,7 +33,7 @@
     "eslint-plugin-react": "^7.33.2",
     "gh-pages": "^6.1.0",
     "react-markdown": "^9.0.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
