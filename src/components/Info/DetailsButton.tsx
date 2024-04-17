@@ -2,13 +2,13 @@ import { ReactElement } from 'react';
 
 import Button from '@mui/material/Button';
 
-interface FooterButtonProps {
-  icon: ReactElement
-  text: string
-  url: string
+interface DetailsButtonProps {
+  icon: ReactElement;
+  text: string;
+  url: string;
 }
 
-const DetailsButton = ({ icon, text, url }: FooterButtonProps): JSX.Element => (
+const DetailsButton = ({ icon, text, url }: DetailsButtonProps): JSX.Element => (
   <Button
     color="primary"
     href={url}

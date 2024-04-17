@@ -4,7 +4,7 @@ import { username } from '../config';
 
 import { RepositoryFull, UserFull } from '../types/types';
 
-const octokit = new Octokit();
+const octokit = new Octokit({});
 
 const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) => {
   const languages = sessionStorage.getItem(`languages${languagesUrl}`);
@@ -15,7 +15,6 @@ const getLanguages = (languagesUrl: string, setState: (arg0: string[]) => void) 
 
   const fetchLanguages = async () => {
     try {
-      const octokit = new Octokit();
       const response = await octokit.request(`GET ${languagesUrl}`);
       setState(response.data as Array<string>);
       sessionStorage.setItem(`languages${languagesUrl}`, JSON.stringify(response.data));
